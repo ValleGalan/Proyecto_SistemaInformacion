@@ -1,0 +1,18 @@
+.contenedor{
+    display:flex;
+}
+
+.contenedor div{
+    border:1px blue;
+    padding: 12px;
+    background: green;
+}
+.caja1{
+    border:1px blue;
+}
+.caja2{
+    border:1px blue; 
+}
+.caja3{
+    border:1px blue;  
+}
