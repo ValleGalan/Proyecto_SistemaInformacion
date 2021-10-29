@@ -1,19 +1,117 @@
 
-.contenedor{
-    display:flex;
+.event-lista {
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    margin: 15px;
+    padding: 0px;
+}
+.event-lista > li {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px rgb(51, 51, 51);
+    box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+    padding: 0px;
+    margin: 0px 0px 20px;
 }
 
-.contenedor div{
-    border:1px blue;
-    padding: 12px;
-    background: green;
+.event-lista > li > img {
+    width: 100%;
 }
-.caja1{
-    border:1px blue;
+.event-lista > li > .info {
+    padding-top: 5px;
+    text-align: center;
+    height: 500px;
 }
-.caja2{
-    border:1px blue; 
+.event-lista > li > .info > .title {
+    font-size: 15pt;
+    font-weight: 700;
+    margin: 5px;
 }
-.caja3{
-    border:1px blue;  
+.event-lista > li > .info > .desc {
+    font-size: 12pt;
+    font-weight: 300;
+    margin: 5px;
+}
+
+.event-lista > li > .social > ul {
+    display: table;
+    list-style: none;
+    margin: 10px 0px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+.event-lista > li > .social > ul {
+    margin: 0px;
+}
+
+
+.event-lista > li > .info > ul > li > a {
+    display: block;
+    width: 100%;
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+} 
+
+.google-plus:hover a {
+    color: rgb(255, 255, 255) !important;
+    background-color: #337ab7 !important;
+}
+
+@media (min-width: 768px) {
+    .event-lista > li {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 200px;
+        padding: 0px;
+    }
+    
+    .event-lista > li > img {
+        width: 300px;
+        float: left;
+    }
+    .event-lista > li > .info {
+        background-color: rgb(245, 245, 245);
+        overflow: hidden;
+    }
+    .event-lista > li > img {
+        width: 210px;
+        height: 200px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .event-lista > li > .info {
+        position: relative;
+        height: 200px;
+        text-align: left;
+        padding-right: 40px;
+    }	
+    .event-lista > li > .info > .title, 
+    .event-lista > li > .info > .desc {
+        padding: 0px 10px;
+    }
+    .event-lista > li > .info > ul {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+    .event-lista > li > .social {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: block;
+        width: 50px;
+    }
+    .event-lista > li > .social > ul {
+        border-left: 1px solid rgb(230, 230, 230);
+    }
+    .event-lista > li > .social > ul > li {			
+        display: block;
+        padding: 0px;
+    }
+    .event-lista > li > .social > ul > li > a {
+        display: block;
+        width: 50px;
+        padding: 10px 0px 9px;
+    } 
 }
