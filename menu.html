@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html lang="es">
+ 
+	<head>
+		<title>ALE </title>
+		<meta charset="utf-8" />
+        	
+		<link href="css/estilos.css" rel="stylesheet" type="text/css"> <!-- link de los estilos--> 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+		
+        <script>
+			$(document).ready(function(){
+				$("#menu-principal").prepend('<div id="menu-entrada">Menu</div>');
+				$("#menu-entrada").on('click', function(){
+					$('#menu').slideToggle();
+				});
+			});
+		</script>		
+	</head>
+<!--CUERPO-->	 
+	<body>	
+
+ <!--INICIO NAV-->
+		<nav id="menu-principal">
+			<ul id="menu">
+				<li><a href="inicio">Inicio</a></li> <!-- el link =# osea que no hay nada ahi -->
+				<li><a href="#">Nosotros</a></li>
+                <!-- 1 LISTA  ORDENADA-->
+				<li><a href="#">Deporte alternativo</a><!-- LISTA  ORDENADA-->
+					<ul><!-- LISTA NO ORDENADA, donde anido otra -->
+						<li><a href="#">Terrestre</a>
+							<ul>
+                            <li><a href="#">Yoga</a></li>
+							<li><a href="#">Golf</a></li>
+							<li><a href="#">Natación</a></li>
+							<li><a href="#">Tenis</a></li>
+                            <li><a href="#">Tenis de mesa</a></li>
+							<li><a href="#">Padel</a></li>
+                            </ul>
+						</li>
+						<li><a href="#">Acuatico</a>
+							<ul>
+							<li><a href="#">Natación</a></li>
+							<li><a href="#">Ejercio en el agua</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+                <!-- 2 LISTA  ORDENADA-->
+                <li><a href="#">Deportes</a><!-- LISTA  ORDENADA-->
+					<ul><!-- LISTA NO ORDENADA, donde anido otra -->
+						<li><a href="#">Terrestre</a>
+							<ul>
+							<li><a href="#">Golf</a></li>
+							<li><a href="#">Natación</a></li>
+							<li><a href="#">Tenis</a></li>
+                            <li><a href="#">Tenis de mesa</a></li>
+							<li><a href="#">Padel</a></li>
+                           </ul>
+						</li>
+						<li><a href="#">Acuatico</a>
+							<ul>
+							<li><a href="#">Natación</a></li>
+							<li><a href="#">Ejercio en el agua</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				
+				<li><a href="">Contacto</a></li>
+			</ul>
+		</nav>	
+ <!--FIN NAV-->
+	</body>
+</html>

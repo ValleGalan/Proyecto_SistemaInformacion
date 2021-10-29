@@ -1,18 +1,412 @@
-.contenedor{
-    display:flex;
+/*INICIO MENU*/
+body{
+
+	font-family:  'Arial', Helvetica, sans-serif;
+	background: #e6f5ff; /*celeste muy clarito cuerpo*/
 }
 
-.contenedor div{
-    border:1px blue;
-    padding: 12px;
-    background: green;
+#menu, #menu ul{  /*estilo de la lista*/
+	margin: 0;
+	padding: 0;
+	list-style:none; /*borran los puntos de la lista*/
 }
-.caja1{
-    border:1px blue;
+
+#menu{
+	width: 90%;/*hancho del menu*/
+	margin: 10px auto; /*margen del menu*/
+	border: 1px solid   #00264d;/*contorno del menu*/
+	background: #111;
+	background: linear-gradient(to top left, #00264d 0%, #0059b3 64%);
+	border-radius: 8px;
+	box-shadow: 0 2px 2px #ccc;
 }
-.caja2{
-    border:1px blue; 
+#menu:before,
+#menu:after{
+	content: "";
+	display: block;
 }
-.caja3{
-    border:1px blue;  
+
+#menu:after{
+	clear:both;
 }
+ 
+
+
+#menu li{
+	float: left;
+	border-right: 1px solid gray;
+	position: relative;
+}
+
+#menu a{
+	float: left;
+	padding: 12px 30px;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase; /*texto en Mayuscula*/
+	font: bold 13px Arial, Helvetica;/*negrita y tamaño de la letra*/
+}
+
+#menu ul{
+	margin: 20px 0 0 0;
+	opacity: 0;
+	visibility: hidden;/*OCULTA los que estan anidados :O */
+	position: absolute;
+	top: 38px;
+	left: 0;
+	z-index: 1;
+	background: linear-gradient(to top left, #00264d 0%, #0059b3 64%);
+	box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.3);
+	border-radius: 3px;
+	transition: all 0.2s ease-in-out;/*transiciones*/
+}
+
+#menu li:hover > ul{/*activa las transiciones*/
+	opacity: 1;
+	visibility: visible;/*MUESTRA los que estan anidados :O */
+	margin: 0;
+}
+
+#menu ul ul{
+	top: 0;
+	left: 150px;
+	margin: 0 0 0 20px;
+	box-shadow: 0 -1px 0 rbga(255, 255, 255, 0.3);
+}
+
+#menu ul a{
+	padding: 10px;
+	width: 130px;
+	display: block;
+	white-space: nowrap;/*espacios en blanco*/
+	float: none;
+	text-transform: none;
+	
+}
+
+#menu ul a:hover{
+	background: linear-gradient(to top left, #b3d9ff 0%, #66b3ff  64%);/*cuando se posicionen ahi se oscuresca*/
+}
+
+#menu ul li:first-child > a:after{
+	content: "";
+	position: absolute;
+	left: 30px;
+	top: -6px;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid #2a4885;
+}
+
+#menu ul ul li:first-child > a:after{	
+	left: -6px;
+	top: 50%;
+	margin-top: -6px;
+	border-left: 0;
+	border-top: 6px solid transparent;
+	border-right: 6px solid #577cc9;
+	border-bottom: 6px solid transparent;
+}
+
+/*esta va despues de crear los estilos responsive*/
+#menu-entrada{
+	/*borrar incialmente*/
+	display: none;
+}
+
+@media(max-width: 700px){
+
+	#menu-principal{
+		position:relative;
+	}
+
+	#menu-principal*{
+		box-sizing: border-box;
+	}
+
+	#menu-entrada{
+		display: block;
+		height: 40px;
+		line-height: 40px;
+		cursor: pointer;
+		padding: 0 0 0 50px;
+		border: 1px solid #577cc9;
+		color: #fff;
+		font-weight: bold;
+		background-color: #111;
+		/*background: url(../imagenes/menu.png) no-repeat 10px center, linear-gradient(#2a4885, #577cc9);*/
+		background: linear-gradient(to top left, #00264d 0%, #0059b3 64%);
+	}
+
+	#menu{
+		margin: 0;
+		padding: 10px;
+		position: absolute;
+		top: 40px;
+		width: 100%;
+		z-index: 1;
+		display: none;
+		box-shadow: none;
+	}
+
+	#menu ul{
+		position: static;
+		visibility: visible;
+		opacity: 1;
+		margin: 0;
+		background: none;
+		box-shadow: none;
+	}
+
+	#menu ul ul{
+		margin: 0 0 0 20px;
+		box-shadow: none;
+	}
+
+	#menu li{
+		position: static;
+		display: block;
+		float: none;
+		border: 0;
+		margin: 5px;
+		box-shadow: none;
+		background: none !important;
+	}
+
+	#menu ul li{
+		margin-left: 20px;
+		box-shadow: none;
+	}
+
+	#menu a{
+		display: block;
+		float: none;
+		padding: 0;
+		color: #fff;
+	}
+
+	#menu a:hover{
+		color: #2a4885;
+	}
+
+	#menu ul a{
+		padding: 0;
+		width: auto;
+	}
+
+	#menu ul a{
+		background: none !important;
+	}
+}
+/*FIN MENU*/
+/*INICIO DE SECCION DE IMAGENES*/
+/* Estilos globales */
+.contenedor{
+	width:80%;
+	margin:auto;
+	overflow:hidden;
+  }
+/*FIN DE SECCTION DE IMAGENES*/
+/* Cajas */
+#cajas{
+	margin-top:20px;
+  }
+  
+  #cajas .caja{
+	float:left;
+	text-align: center;
+	width:30%;
+	padding:10px;
+  }
+  
+  #cajas .caja img{
+	width:90px;
+  }
+/*INICIO TEXTO DE BIENVENIDA*/
+.texto_bienvenida{
+	text-align: center;
+
+}
+
+/*FIN DE TEXTO DE BIENVENIDA*/
+/*INICIO DE EDICICON DEL CARRUCEL*/
+/*FIN DE EDICICON DEL CARRUCEL*/
+
+
+/*FOOTER*/
+footer{
+	padding:20px;
+	margin-top:20px;
+	color:#ffffff;
+	background: linear-gradient(to top left, #00264d 0%, #0059b3 64%);
+	text-align: center;
+  }
+
+/*INICIO ESTILOS DISCIPLINAS Y DEPORTE EXTREMO*/
+.event-lista {
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    margin: 15px;
+    padding: 0px;
+}
+.event-lista > li {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px rgb(51, 51, 51);
+    box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+    padding: 0px;
+    margin: 0px 0px 20px;
+}
+
+.event-lista > li > img {
+    width: 100%;
+}
+.event-lista > li > .info {
+    padding-top: 5px;
+    text-align: center;
+    height: 500px;
+}
+.event-lista > li > .info > .title {
+    font-size: 15pt;
+    font-weight: 700;
+    margin: 5px;
+}
+.event-lista > li > .info > .desc {
+    font-size: 12pt;
+    font-weight: 300;
+    margin: 5px;
+}
+
+.event-lista > li > .social > ul {
+    display: table;
+    list-style: none;
+    margin: 10px 0px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+.event-lista > li > .social > ul {
+    margin: 0px;
+}
+
+
+.event-lista > li > .info > ul > li > a {
+    display: block;
+    width: 100%;
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+} 
+
+.google-plus:hover a {
+    color: rgb(255, 255, 255) !important;
+    background-color: #337ab7 !important;
+}
+
+@media (min-width: 768px) {
+    .event-lista > li {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 200px;
+        padding: 0px;
+    }
+    
+    .event-lista > li > img {
+        width: 300px;
+        float: left;
+    }
+    .event-lista > li > .info {
+        background-color: rgb(245, 245, 245);
+        overflow: hidden;
+    }
+    .event-lista > li > img {
+        width: 210px;
+        height: 200px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .event-lista > li > .info {
+        position: relative;
+        height: 200px;
+        text-align: left;
+        padding-right: 40px;
+    }	
+    .event-lista > li > .info > .title, 
+    .event-lista > li > .info > .desc {
+        padding: 0px 10px;
+    }
+    .event-lista > li > .info > ul {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+    .event-lista > li > .social {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: block;
+        width: 50px;
+    }
+    .event-lista > li > .social > ul {
+        border-left: 1px solid rgb(230, 230, 230);
+    }
+    .event-lista > li > .social > ul > li {			
+        display: block;
+        padding: 0px;
+    }
+    .event-lista > li > .social > ul > li > a {
+        display: block;
+        width: 50px;
+        padding: 10px 0px 9px;
+    } 
+}
+/*FIN ESTILOS DISIPLINAS Y DEPORTE EXTREMO*/
+/*INICIO DE ACTIVIDADES */
+.contenedor-de-actividades {
+	display: flex;
+	justify-content: space-evenly;
+
+}
+.imagen-actividades{
+	width: 70%;
+}
+.actividades .contenido-textos{
+	width: 48%;
+}
+
+.producto-small-img img{width: 100%; border: 1px solid rgba(0, 0, 0, .2);padding: 8px;margin: 10px 10px 15px; cursor: pointer;}
+.producto-small-img {
+	width: 12%;display: flex;}
+.img-container img{height: 550px;
+
+
+}
+.contenedor-actividades{ display: flex;
+	justify-content: space-evenly;
+	
+}
+
+.contenido-textos{
+	width: 60%;
+		}
+.contenido-textos h3{
+	margin-bottom: 15px;   }
+.contenido-textos h3 samp{
+	background: lightgreen;
+	color: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	padding: 2px;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+	margin-right: 6px;
+   
+}
+
+.contenido-textos p{
+	padding: 0px 0px 30px 30px;
+	font-weight: 300;
+	text-align: justify;
+}
+/*FIN DE ACCTIVIDADES*/
