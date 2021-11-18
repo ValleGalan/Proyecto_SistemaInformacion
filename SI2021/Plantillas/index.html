@@ -1,0 +1,78 @@
+{% extends "plantilla_base.html" %} <!--Para que herede del padre-->
+
+
+{% block content%}  <!--contenido del hijo variable-->
+
+
+
+    <!--INICIO TEXTO-->
+    <div class="texto_bienvenida">
+        <H1>Adieu les Excuses</H1>
+        <h3> Ser vínculo entre las personas y tipos de actividades no convencionales</h3>
+    </div>
+    <!--FIN TEXTO--> 
+
+    <!--*************************** BEGIN BY JAVIERC *************************************-->
+    <!--FILTROS Y DEPORTES-->
+    <div class="filtro_deporte">
+      <!--OPCINES DE FILTROS-->
+      <div class="filtros">
+        <a href="#" class="categoria" category="todos">Todos</a>
+        <a href="#" class="categoria" category="terrestre">Terrestre</a>
+        <a href="#" class="categoria" category="acuatico">Acuatico</a>
+        <a href="#" class="categoria" category="aereo">Aéreo</a>
+        <a href="#" class="categoria" category="ninio">Niños</a>
+        <a href="#" class="categoria" category="joven">Jovenes</a>
+        <a href="#" class="categoria" category="adulto">Adultos</a>
+        <a href="#" class="categoria" category="adulto_mayor">Adultos Mayores</a>
+        <a href="#" class="categoria" category="bajo">Riesgo Bajo</a>
+        <a href="#" class="categoria" category="medio">Riesgo Medio</a>
+        <a href="#" class="categoria" category="alto">Riesgo Alto</a>
+      </div>
+      
+      <!--DEPORTES DISPONIBLES-->
+      <section class="todos_deportes">
+        <div class="deporte" categoria="aereo">
+          <img src="\static\imagenes\deportes\aladelta1.jpeg" alt="No hay imagen..." height="200px">
+          <a href="#">Ala delta</a>
+        </div>
+        <div class="deporte" categoria="acuatico">
+          <img src="\static\imagenes\deportes\aquagim1.jpeg" alt="No hay imagen..." height="200px">
+          <a href="#">Aqua Gim</a>
+        </div>
+        <div class="deporte" categoria="adulto">
+          <img src="\static\imagenes\deportes\bubblefutbol.jpg" alt="No hay imagen..." height="200px">
+          <a href="#">Fútbol Burbuja</a>
+        </div>
+        <div class="deporte" categoria="alto">
+          <img src="\static\imagenes\deportes\ciclismo de montaña1.jpg" alt="No hay imagen..." height="200px">
+          <a href="#">Ciclismo de montaña</a>
+        </div>
+        <div class="deporte" categoria="medio">
+          <img src="\static\imagenes\deportes\escalar.jpg" alt="No hay imagen..." height="200px">
+          <a href="#">Escalada</a>
+        </div>
+        <div class="deporte" categoria="joven">
+          <img src="\static\imagenes\deportes\parapente2.jpg" alt="No hay imagen..." height="200px">
+          <a href="#">Parapente</a>
+        </div>
+        <div class="deporte" categoria="terrestre">
+          <img src="\static\imagenes\deportes\parkour.jpg" alt="No hay imagen..." height="200px">
+          <a href="#">Parkour</a>
+        </div>
+        <div class="deporte" categoria="medio">
+          <img src="\static\imagenes\deportes\piraguismo1.jpg" alt="No hay imagen..." height="200px">
+          <a href="#">Piragüismo</a>
+        </div>
+        <div class="deporte" categoria="joven">
+          <img src="\static\imagenes\deportes\rafting3.jpg" alt="No hay imagen..." height="200px">
+          <a href="#">Rafting</a>
+        </div>
+        <div class="deporte" categoria="adulto_mayor">
+          <img src="\static\imagenes\deportes\yoga.jpg" alt="No hay imagen..." height="200px">
+          <a href="#">Yoga</a>
+        </div>
+      </section>
+    </div>
+    <!--*************************** END BY JAVIERC *************************************-->
+    {% endblock%}

@@ -1,0 +1,123 @@
+  {% extends "plantilla_base.html" %} <!--Para que herede del padre-->
+
+ {% block content%}  <!--contenido del hijo variable-->
+ <!--INICIO TEXTO-->
+ <div class="texto_bienvenida">
+    <H1>Adieu les Excuses</H1>
+    <h3> Ser vínculo entre las personas y tipos de actividades no convencionales</h3>
+ </div>
+
+ <!--FIN TEXTO-->
+ <!--INICIO SECTION DE IMAGENES-->
+<section id="cajas_inicio">
+  <figure class="contenedor">
+    <div class="caja">
+      <img src="\static\imagenes\trekking.png">    
+      <h3>Toma agua</h3>
+      <p> “Tomas mas de un litro de agua mejora tu calidad de vida”</p>
+    </div>
+    <div class="caja">
+      <img src="\static\imagenes\trekking.png">
+      <h3>Conoce Lugares</h3>
+      <p>“Abre tu mente y cuida tu salud”</p>
+    </div>
+    <div class="caja">
+      <img src="\static\imagenes\trekking.png">
+      <h3>Cuida tu alimentación</h3>
+      <p>“Hace que tu vida sea mas larga”</p>
+    </div>
+
+  </figure>
+</section>
+<!--FIN SECTION DE IMAGENES-->
+  <!--COMIENZO DE CARRUCEL-->
+   
+  <div id="carouselExampleCaptions" class="carousel slide"  data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button   type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button   type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button   type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button   type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button   type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 6"></button>
+    </div>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="\static\imagenes\horizontal\horizontal1.png" class="d-block w-100" alt="banner 1">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>JUJUY TREKKING- Profesor Patricio Lamas   </h5>
+            <p>#JujuyTrekking te da conocer algunos de  los próximos destinos a concretar..</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="\static\imagenes\horizontal\horizontal2.png" class="d-block w-100" alt="banner 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Roller Hockey Palpala</h5>
+          <p>Es un nuevo deporte en el norte argentino muy dinámico, ágil y divertido dedicado a todas la edades de ambos sexos</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="\static\imagenes\horizontal\horizontal3.png" class="d-block w-100" alt="banner 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Parkur</h5>
+          <p>Parkour es el arte de pasar los obstáculos lo más rápido y eficientemente posible.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="\static\imagenes\horizontal\horizontal4.png" class="d-block w-100" alt="banner 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Parkur</h5>
+          <p>Parkour es el arte de pasar los obstáculos lo más rápido y eficientemente posible.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="\static\imagenes\horizontal\horizontal5.png" class="d-block w-100" alt="banner 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Parkur</h5>
+          <p>Parkour es el arte de pasar los obstáculos lo más rápido y eficientemente posible.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="\static\imagenes\horizontal\horizontal6.png" class="d-block w-100" alt="banner 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Parkur</h5>
+          <p>Parkour es el arte de pasar los obstáculos lo más rápido y eficientemente posible.</p>
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<!--FIN DE CARRUCEL -->
+
+
+
+
+  {% endblock%}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+    
+

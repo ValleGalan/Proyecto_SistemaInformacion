@@ -1,0 +1,100 @@
+  {% extends "plantilla_base.html" %} <!--Para que herede del padre-->
+
+ {% block content%}  <!--contenido del hijo variable-->
+<aside class="menu_lateral">
+ <!--sub menu 1-->
+ <li><a href="{% url 'disciplinasAlternativas' %}">disciplina alternativa +</a>
+	<ul>
+		<li><a href="#">terrestre + </a>
+			<ul>
+				<li><a href="{% url 'yoga' %}">Yoga</a></li>
+				<li><a href="#">Golf</a></li>
+				<li><a href="#">tenis</a></li>
+				<li><a href="#">tenis de mesa</a></li>
+				<li><a href="#">padel</a></li>
+			</ul>
+		</li>
+		<li><a href="#">acuatico + </a>
+			<ul>
+				<li><a href="#">ejercicio en el agua</a></li>
+				
+			</ul>
+		</li>
+	</ul>
+	</li>
+<!--sub menu 2-->
+<li><a href="{% url 'deportesExtremos' %}">deporte extremo +</a>
+	<ul>
+		<li><a href="#">terrestre + </a>
+			<ul>
+				<li><a href="#">parkur</a></li>
+				<li><a href="#">trekking</a></li>
+				<li><a href="#">tenis</a></li>
+				<li><a href="#">rappel</a></li>
+				<li><a href="#">roller skating</a></li>
+				<li><a href="#">montañismo</a></li>
+			</ul>
+		</li>
+	</ul>
+	</li>
+</aside>
+
+<div id="contenedor_disciplinas">
+ <!---cajas con flex---> 
+ <div class="contenedor-disciplinas">
+	<div class="content-caja">
+		<h3><a href="#">APAG Gimnasia Artística</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\parkur.png" class="i_disciplina" />
+		<p>🤸🏻 🔵🔴⚪️Gimnasia Artistica 🤸🏻 @poli_alcoba
+			🏋️‍♂️ Entrenamiento Funcional 💪🏻
+			📍APAG - CALLE LAMADRID 116 CENTRO
+			📲Cel: 3884588030</p>
+			<div class="social">
+				<ul>
+					<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				</ul>
+			</div>
+	</div>
+	<div class="content-caja">
+		<h3><a href="#">APAG Gimnasia Artística</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\parkur.png" class="i_disciplina" />
+		<p>🤸🏻 🔵🔴⚪️Gimnasia Artistica 🤸🏻 @poli_alcoba
+			🏋️‍♂️ Entrenamiento Funcional 💪🏻
+			📍APAG - CALLE LAMADRID 116 CENTRO
+			📲Cel: 3884588030</p>
+			<div class="social">
+				<ul>
+					<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				</ul>
+			</div>
+	</div>
+	<div class="content-caja">
+		<h3><a href="#">APAG Gimnasia Artística</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\parkur.png" class="i_disciplina" />
+		<p>🤸🏻 🔵🔴⚪️Gimnasia Artistica 🤸🏻 @poli_alcoba
+			🏋️‍♂️ Entrenamiento Funcional 💪🏻
+			📍APAG - CALLE LAMADRID 116 CENTRO
+			📲Cel: 3884588030</p>
+			<div class="social">
+				<ul>
+					<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				</ul>
+			</div>
+	</div>
+	<div class="content-caja">
+		<h3><a href="#">APAG Gimnasia Artística</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\parkur.png"  class="i_disciplina"/>
+		<p>🤸🏻 🔵🔴⚪️Gimnasia Artistica 🤸🏻 @poli_alcoba
+			🏋️‍♂️ Entrenamiento Funcional 💪🏻
+			📍APAG - CALLE LAMADRID 116 CENTRO
+			📲Cel: 3884588030</p>
+			<div class="social">
+				<ul>
+					<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				</ul>
+			</div>
+	</div>
+</div>  
+
+</div>
+<  {% endblock%}

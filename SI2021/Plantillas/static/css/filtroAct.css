@@ -1,0 +1,71 @@
+/*ESTILOS DE FILTROS E IMAGENES DE DEPORTES*/
+
+/*FILTROS -------------------------------*/
+.filtro_deporte {
+    width: 95%;
+    margin: auto;
+    display: flex;
+}
+
+.filtros {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+.filtros .categoria {
+    display: block;
+    width: 90%;
+    padding: 5px 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #00AF91;
+
+
+    text-decoration: none;
+    text-align: center;
+    color: #000000;
+}
+
+.filtros .filtro_activo {
+    background: #6666ff;
+}
+
+/*DEPORTES -----------------------------*/
+.todos_deportes {
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.todos_deportes .deporte {
+    width: 30%;
+    margin-left: 3%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.3);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+
+    transition: all 0.4s;
+}
+
+.todos_deportes .deporte .img {
+    width: 100%;
+}
+
+.todos_deportes .deporte a {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background: #F58634;
+
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+}
