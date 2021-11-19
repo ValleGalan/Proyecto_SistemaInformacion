@@ -1,73 +1,117 @@
 {% extends "plantilla_base.html" %} <!--Para que herede del padre-->
 
  {% block content%}  <!--contenido del hijo variable-->
+ <main class="main"> 
 
-  <div class="container">
-	  
-		<div class="row">
-			<div class="[ col-md-10 ]">
-				<ul class="event-lista">
-					<!-- lista de deportes -->
-				    <li>
-						<img alt="Independence Day" src="http://pxsports.com/wp-content/uploads/2021/08/09-40-deportes-DIRTBOARDING-1024x576-1.jpg" />
-						<div class="info">
-							<h2 class="title"><a href="#">DIRTBOARDING</a></h2>
-							<p class="desc">También conocido como dirtboarding y el abordaje fuera de la carretera, las montañas adoptan todo tipo de terrenos, y algunas veces se utilizan para hacer trucos o incluso carreras de descenso. Una especie de cruce entre el skate y el snowboard.</p>
-						</div>
-						<div class="social">
-							<ul>
-								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
-							</ul>
-						</div>
-					</li>
-                    <!-- Koniec pierwsze zawody -->
-                    
-                    <!-- drugie zawody -->
-                    <li>
-						<img alt="Independence Day" src="http://pxsports.com/wp-content/uploads/2021/08/09-40-deportes-SKATEBOARDING-1024x681-1.jpg" />
-						<div class="info">
-							<h2 class="title"><a href="#">SKATEBOARDING</a></h2>
-							<p class="desc">Hay diversos grados de skateboard, pero aquí está la línea de fondo. Todos los skaters trabajan para mejorar sus habilidades, agregando trucos cada vez más difíciles. Es de esperar que se estrelle contra el pavimento, y volver a intentarlo nuevamente es parte del proceso.</p>
-						</div>
-						<div class="social">
-							<ul>
-								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
-							</ul>
-						</div>
-					</li>
-					<!-- Koniec drugie zawody -->
-					
-					<!-- trzecie zawody -->
-					<li>
-						<img alt="Independence Day" src="http://pxsports.com/wp-content/uploads/2021/08/09-40-deportes-BMX-1024x576-2.jpg" />
-						<div class="info">
-							<h2 class="title"><a href="#">BMX</a></h2>
-							<p class="desc">BMX (Bicycle Motocross) al principio se conoció como la típica carrera en bici tipo motocross sin embargo.</p>
-						</div>
-						<div class="social">
-							<ul>
-								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
-							</ul>
-						</div>
-					</li>
-					<!-- Koniec trzecie zawody -->		
-					<!-- czwarte zawody -->
-					<li>
-						<img alt="Independence Day" src="http://pxsports.com/wp-content/uploads/2021/08/09-40-deportes-ICLISMO-DE-MONTANA-ABAJO-1024x682-1.jpg" />
-						<div class="info">
-							<h2 class="title"><a href="#">CICLISMO DE MONTAÑA ABAJO</a></h2>
-							<p class="desc">Baja la colina lo más rápido que puedas en una bicicleta de montaña. Preste especial atención a los árboles, raíces y rocas que sobresalen a lo largo del camino.</p>
-						</div>
-						<div class="social">
-							<ul>
-								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
-							</ul>
-						</div>
-					</li>
-				<!-- Koniec czwarte zawody -->	
-				</ul>
-			</div>
+	<!---cajas con flex---> 
+	<div class="contenedor-disciplinas">
+	   <div class="content-caja">
+		   <h3><a href="#">Pakur</a></h3>
+		   <img alt="Independence Day" src="\static\imagenes\extremo\parkur.png" class="i_disciplina" />
+		   <p> 🔵 Practica Pakur🤸🏻 @poli_alcoba
+			    Entrena en Pkur💪🏻
+			   📍xxxxxxxxxxxxxxxxxxx
+			   📲Cel: 3884588030</p>
+			   <div class="social">
+				   <ul>
+					   <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				   </ul>
+			   </div>
+	   </div>
+	   <div class="content-caja">
+		   <h3><a href="#">Montañismo</a></h3>
+		   <img alt="Independence Day" src="\static\imagenes\extremo\montañismo.jpg" class="i_disciplina" />
+		   <p>🔵Practica Montañismo @poli_alcoba
+			   Entrena en montañismo💪🏻
+			   📍xxxxxxxxxxxxxx
+			   📲Cel: 3884588030</p>
+			   <div class="social">
+				   <ul>
+					   <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				   </ul>
+			   </div>
+	   </div>
+	   <div class="content-caja">
+		   <h3><a href="#">Rappel</a></h3>
+		   <img alt="Independence Day" src="\static\imagenes\extremo\rappel.jpg" class="i_disciplina" />
+		   <p>🔵 Entrena en Rappel @poli_alcoba
+			   🏋️‍♂️ Entrenamiento de Rappel 💪🏻
+			   📍xxxxxxxxxxxxxx
+			   📲Cel: 3884588030</p>
+			   <div class="social">
+				   <ul>
+					   <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				   </ul>
+			   </div>
+	   </div>
+	   <div class="content-caja">
+		   <h3><a href="#">Trekking</a></h3>
+		   <img alt="Independence Day" src="\static\imagenes\extremo\trekking.png"  class="i_disciplina"/>
+		   <p>🤸🏻 🔵Practica Trekking @poli_alcoba
+			   Entrenamiento de Trekking 💪🏻
+			   📍xxxxxxxxxx
+			   📲Cel: 3884588030</p>
+			   <div class="social">
+				   <ul>
+					   <li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				   </ul>
+			   </div>
+	   </div>
+   </div>  
+   <!---cajas con flex---> 
+	<div class="contenedor-disciplinas">
+		<div class="content-caja">
+			<h3><a href="#">Pakur</a></h3>
+			<img alt="Independence Day" src="\static\imagenes\extremo\parkur.png" class="i_disciplina" />
+			<p> 🔵 Practica Pakur🤸🏻 @poli_alcoba
+				 Entrena en Pkur💪🏻
+				📍xxxxxxxxxxxxxxxxxxx
+				📲Cel: 3884588030</p>
+				<div class="social">
+					<ul>
+						<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+					</ul>
+				</div>
 		</div>
-	</div>
-  
+		<div class="content-caja">
+			<h3><a href="#">Montañismo</a></h3>
+			<img alt="Independence Day" src="\static\imagenes\extremo\montañismo.jpg" class="i_disciplina" />
+			<p>🔵Practica Montañismo @poli_alcoba
+				Entrena en montañismo💪🏻
+				📍xxxxxxxxxxxxxx
+				📲Cel: 3884588030</p>
+				<div class="social">
+					<ul>
+						<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+					</ul>
+				</div>
+		</div>
+		<div class="content-caja">
+			<h3><a href="#">Rappel</a></h3>
+			<img alt="Independence Day" src="\static\imagenes\extremo\rappel.jpg" class="i_disciplina" />
+			<p>🔵 Entrena en Rappel @poli_alcoba
+				🏋️‍♂️ Entrenamiento de Rappel 💪🏻
+				📍xxxxxxxxxxxxxx
+				📲Cel: 3884588030</p>
+				<div class="social">
+					<ul>
+						<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+					</ul>
+				</div>
+		</div>
+		<div class="content-caja">
+			<h3><a href="#">Trekking</a></h3>
+			<img alt="Independence Day" src="\static\imagenes\extremo\trekking.png"  class="i_disciplina"/>
+			<p>🤸🏻 🔵Practica Trekking @poli_alcoba
+				Entrenamiento de Trekking 💪🏻
+				📍xxxxxxxxxx
+				📲Cel: 3884588030</p>
+				<div class="social">
+					<ul>
+						<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+					</ul>
+				</div>
+		</div>
+	</div>  
+   </main>
  {% endblock%}

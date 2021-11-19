@@ -2,8 +2,12 @@
 
 
  {% block content%}  <!--contenido del hijo variable-->
-<div id="Imagen_Fondo_Nosotros">
-<video src="\static\imagenes\videoAle.mp4" id="video_nosotros"></video>
+ <main class="main"> 
+
+<video controls autoplay loop class="contenedor_video"> <!--se reproduce a penas entras-->
+    <source src="\static\imagenes\videoAle.mp4" type="video/mp4" id="video_nosotros">
+    <source src="\static\imagenes\videoAle.ogv" type="video/ogg" id="video_nosotros">
+</video>
 <!--INFORMACION: OBJETIVO,ETC-->
 <div class="container">
     <h1 class="text-center ">Nosotros </h1>
@@ -152,7 +156,7 @@
             </div>
 
     <!--FIN TEXTO-->
-</div>  
 
+        </main> 
 
 {% endblock%}

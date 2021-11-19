@@ -1,53 +1,17 @@
   {% extends "plantilla_base.html" %} <!--Para que herede del padre-->
-
+ 
  {% block content%}  <!--contenido del hijo variable-->
-<aside class="menu_lateral">
- <!--sub menu 1-->
- <li><a href="{% url 'disciplinasAlternativas' %}">disciplina alternativa +</a>
-	<ul>
-		<li><a href="#">terrestre + </a>
-			<ul>
-				<li><a href="{% url 'yoga' %}">Yoga</a></li>
-				<li><a href="#">Golf</a></li>
-				<li><a href="#">tenis</a></li>
-				<li><a href="#">tenis de mesa</a></li>
-				<li><a href="#">padel</a></li>
-			</ul>
-		</li>
-		<li><a href="#">acuatico + </a>
-			<ul>
-				<li><a href="#">ejercicio en el agua</a></li>
-				
-			</ul>
-		</li>
-	</ul>
-	</li>
-<!--sub menu 2-->
-<li><a href="{% url 'deportesExtremos' %}">deporte extremo +</a>
-	<ul>
-		<li><a href="#">terrestre + </a>
-			<ul>
-				<li><a href="#">parkur</a></li>
-				<li><a href="#">trekking</a></li>
-				<li><a href="#">tenis</a></li>
-				<li><a href="#">rappel</a></li>
-				<li><a href="#">roller skating</a></li>
-				<li><a href="#">montañismo</a></li>
-			</ul>
-		</li>
-	</ul>
-	</li>
-</aside>
 
-<div id="contenedor_disciplinas">
+ <main class="main"> 
+
  <!---cajas con flex---> 
  <div class="contenedor-disciplinas">
 	<div class="content-caja">
-		<h3><a href="#">APAG Gimnasia Artística</a></h3>
-		<img alt="Independence Day" src="\static\imagenes\parkur.png" class="i_disciplina" />
-		<p>🤸🏻 🔵🔴⚪️Gimnasia Artistica 🤸🏻 @poli_alcoba
-			🏋️‍♂️ Entrenamiento Funcional 💪🏻
-			📍APAG - CALLE LAMADRID 116 CENTRO
+		<h3><a href="#">YOGA</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\disciplina\yoga.jpg" class="i_disciplina" />
+		<p>🤸🏻 ⚪️Yoga 🤸🏻 @poli_alcoba
+			Entrenamiento Funcional 💪🏻
+			📍xxxxxxxxxx
 			📲Cel: 3884588030</p>
 			<div class="social">
 				<ul>
@@ -56,11 +20,11 @@
 			</div>
 	</div>
 	<div class="content-caja">
-		<h3><a href="#">APAG Gimnasia Artística</a></h3>
-		<img alt="Independence Day" src="\static\imagenes\parkur.png" class="i_disciplina" />
-		<p>🤸🏻 🔵🔴⚪️Gimnasia Artistica 🤸🏻 @poli_alcoba
-			🏋️‍♂️ Entrenamiento Funcional 💪🏻
-			📍APAG - CALLE LAMADRID 116 CENTRO
+		<h3><a href="#">Golf</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\disciplina\golf.jpg" class="i_disciplina" />
+		<p>⚪️Practica  Golf 
+			 Entrenamiento  💪🏻
+			📍xxxxxxxxxxxxx
 			📲Cel: 3884588030</p>
 			<div class="social">
 				<ul>
@@ -69,11 +33,11 @@
 			</div>
 	</div>
 	<div class="content-caja">
-		<h3><a href="#">APAG Gimnasia Artística</a></h3>
-		<img alt="Independence Day" src="\static\imagenes\parkur.png" class="i_disciplina" />
-		<p>🤸🏻 🔵🔴⚪️Gimnasia Artistica 🤸🏻 @poli_alcoba
-			🏋️‍♂️ Entrenamiento Funcional 💪🏻
-			📍APAG - CALLE LAMADRID 116 CENTRO
+		<h3><a href="#">PADEL</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\disciplina\padel.jpg" class="i_disciplina" />
+		<p>⚪️ Practica Padel @poli_alcoba
+			 Entrenamiento  💪🏻
+			📍xxxxxxxxxxxxxxxx
 			📲Cel: 3884588030</p>
 			<div class="social">
 				<ul>
@@ -82,11 +46,11 @@
 			</div>
 	</div>
 	<div class="content-caja">
-		<h3><a href="#">APAG Gimnasia Artística</a></h3>
-		<img alt="Independence Day" src="\static\imagenes\parkur.png"  class="i_disciplina"/>
-		<p>🤸🏻 🔵🔴⚪️Gimnasia Artistica 🤸🏻 @poli_alcoba
-			🏋️‍♂️ Entrenamiento Funcional 💪🏻
-			📍APAG - CALLE LAMADRID 116 CENTRO
+		<h3><a href="#">Tenis de Mesa</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\disciplina\tenis_mesa.jpg"  class="i_disciplina"/>
+		<p>⚪️ Practica tenis de Mesa
+			 Entrenamiento  💪🏻
+			📍xxxxxxxxxxx
 			📲Cel: 3884588030</p>
 			<div class="social">
 				<ul>
@@ -96,5 +60,60 @@
 	</div>
 </div>  
 
-</div>
+ <!---cajas con flex---> 
+ <div class="contenedor-disciplinas">
+	<div class="content-caja">
+		<h3><a href="#">APAG Gimnasia Artística</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\disciplina\tenis.jpg" class="i_disciplina" />
+		<p>⚪️Tenis de Mesa  @poli_alcoba
+			 Practica Tenis de Mesa  💪🏻
+			📍xxxxxxxxxxxxxx
+			📲Cel: 3884588030</p>
+			<div class="social">
+				<ul>
+					<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				</ul>
+			</div>
+	</div>
+	<div class="content-caja">
+		<h3><a href="#">APAG Gimnasia Artística</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\disciplina\tenis.jpg" class="i_disciplina" />
+		<p>⚪️Tenis @poli_alcoba
+			Entrenamiento  💪🏻
+			📍xxxxxxxxxxxxxxxxxx
+			📲Cel: 3884588030</p>
+			<div class="social">
+				<ul>
+					<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				</ul>
+			</div>
+	</div>
+	<div class="content-caja">
+		<h3><a href="#">Ejercicio Acuatico</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\disciplina\ejercicio_acuatico.jpg" class="i_disciplina" />
+		<p>⚪️Ejercicio Acuatico@poli_alcoba
+		    Entrenamiento 💪🏻
+			📍xxxxxxxxxxxxxxx
+			📲Cel: 3884588030</p>
+			<div class="social">
+				<ul>
+					<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				</ul>
+			</div>
+	</div>
+	<div class="content-caja">
+		<h3><a href="#">APAG Gimnasia Artística</a></h3>
+		<img alt="Independence Day" src="\static\imagenes\disciplina\ejercicio_acuatico.jpg"  class="i_disciplina"/>
+		<p>⚪️Ejercicio Acuatico@poli_alcoba
+		    Entrenamiento 💪🏻
+			📍xxxxxxxxxxxxxxx
+			📲Cel: 3884588030</p>
+			<div class="social">
+				<ul>
+					<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-globe"></span></a></li>
+				</ul>
+			</div>
+	</div>
+</div>  
+</main>
 <  {% endblock%}

@@ -2,44 +2,116 @@
 	margin: 0;padding: 0;
 	box-sizing: border-box;
 	font-family: Arial,Helvetica,sans-serif;
-	text-transform: capitalize;
-	text-decoration: none;
+
 }
+.contenedor_video #video_nosotros{
+      height: 40px;
+      width: 50px;
+  }
+  @media(min-width: 768px){
+    .contenedor_video #video_nosotros{
+        height: 10px;
+        width: 20px;
+        display: flex;/*activa el flex*/
+        align-items: stretch;/*todas cajas van a tener el mismo tamaño*/
+        justify-content: space-around; 
+    }   
+}
+/*----------Para que sea responsive--------------*/
 body{
-    background-color: #9b9c9e; 
+  background-color: #627267;  /*FIJARSE PORQUE NO LO TOMA*/
+}
+.grid-container > * { /*body*/
+   /* box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+     */
+    text-align: center;
+   
     /*
+     padding: 5px;
+    background-color: #9b9c9e; 
     min-height: 100vh;
 	background-size: cover;
 	background: url(../images/bg.jpg) no-repeat;
 	background-position: center; */ 
-}
-#video_nosotros{
-      margin-top: 20%;
-      height: 50em;
-      width: 130%;
   }
- /*-----------FOOTER-------------*/
- footer{
-    width: 100%;
-     margin-top:10%;
-     color:#fff;
-     background-color: #007965;
-     text-align: center;
-     padding: 30px;  
-   }
- /*--------------MENU-------------*/
-header{
-    position: fixed;/*posicion estatica*/
+  .header { /* el encabezado del menu*/
+  grid-area: header;
+  position: fixed;/*posicion estatica*/
 	top:0; left: 0; right: 0;
 	background: #FFCC29;
 	box-shadow: 0 5px 10px #F58634; /*sombra*/
 	padding: 0px 8%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000,
-}
- 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000,
+  }
+  .navbar {
+    grid-area: navbar;
+    margin-top: 2%;
+    padding-top: 0%;
+  }
+  /*
+  .sidebar {
+    grid-area: sidebar;
+    background-color: #fdcfcf;
+  }*/
+  .main {
+    grid-area: main;
+   /* background-color: #c41111;*/
+  }
+   
+  .footer {
+    grid-area: footer;
+    width: auto;
+    color:#fff;
+    background-color: #007965;
+    text-align: center;
+    padding: 30px; 
+  }
+  .grid-container {
+    display: grid;
+    gap: 2px; /*separacion*/
+    grid-template:
+      "header"  100px
+      "navbar"  70px
+      "main"    auto
+     /* "sidebar" 100px*/
+      "footer"  100px;
+  }
+  
+  @media (min-width: 600px) {
+    .grid-container {
+      /* grid-template-columns: 200px auto;
+      grid-template-rows: 100px 50px auto 100px;
+      grid-template-areas: 
+      "header  header"
+      "navbar  navbar"
+      "sidebar main"
+      "footer  footer"; */
+      grid-template:
+        "header  header" 100px
+      /*  "navbar  navbar" 40px*/
+        "main    main"   80px 
+     /*   "sidebar main"   auto*/
+        "footer  footer" 100px /
+        200px    auto;
+    }
+    
+  }
+  
+  @media (min-width: 900px) {
+    .grid-container {
+      grid-template:
+        "header  header header"  100px
+        "main  main   main" auto
+        "footer  footer footer"  100px /
+        200px    auto   200px;
+    }
+  }
+
+ /*--------------MENU-------------*/
 header .logo{
 	font-weight: bolder;
 	font-size: 25px;
@@ -130,6 +202,8 @@ header label{
 
 	}
 }
+/*---------menu lateral--------*/
+
  /*------------CARRUCEL DE INICIO----------*/
  .slide{
      padding-top: 15px;
@@ -213,8 +287,6 @@ header label{
  }
 /**************************/
 /*******NOSOTROS********/
-
-
 .cuerpoContacto{
    text-align: center;
 }  
@@ -272,131 +344,12 @@ width: 39px;
 
  /*******************/
  /*INICIO ESTILOS DISCIPLINAS Y DEPORTE EXTREMO*/
-.event-lista {
-    list-style: none;
-    font-family: 'Lato', sans-serif;
-    margin: 15px;
-    padding: 50px;
-    display: flex;
-}
-.event-lista > li {
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 5px rgb(51, 51, 51);
-    box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
-    padding: 0px;
-    margin: 0px 0px 20px;
-}
-
-.event-lista > li > img {
-    width: 100%;
-}
-.event-lista > li > .info {
-    padding-top: 5px;
-    text-align: center;
-    height: 500px;
-}
-.event-lista > li > .info > .title {
-    font-size: 15pt;
-    font-weight: 700;
-    margin: 5px;
-}
-.event-lista > li > .info > .desc {
-    font-size: 12pt;
-    font-weight: 300;
-    margin: 5px;
-}
-
-.event-lista > li > .social > ul {
-    display: table;
-    list-style: none;
-    margin: 10px 0px 0px;
-    padding: 0px;
-    width: 100%;
-    text-align: center;
-}
-.event-lista > li > .social > ul {
-    margin: 0px;
-}
-
-
-.event-lista > li > .info > ul > li > a {
-    display: block;
-    width: 100%;
-    color: rgb(30, 30, 30);
-    text-decoration: none;
-} 
-
-.google-plus:hover a {
-    color: rgb(255, 255, 255) !important;
-    background-color: #337ab7 !important;
-}
-
-@media (min-width: 768px) {
-    .event-lista > li {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 200px;
-        padding: 0px;
-    }
-    
-    .event-lista > li > img {
-        width: 300px;
-        float: left;
-    }
-    .event-lista > li > .info {
-        background-color: rgb(245, 245, 245);
-        overflow: hidden;
-    }
-    .event-lista > li > img {
-        width: 210px;
-        height: 200px;
-        padding: 0px;
-        margin: 0px;
-    }
-    .event-lista > li > .info {
-        position: relative;
-        height: 200px;
-        text-align: left;
-        padding-right: 40px;
-    }	
-    .event-lista > li > .info > .title, 
-    .event-lista > li > .info > .desc {
-        padding: 0px 10px;
-    }
-    .event-lista > li > .info > ul {
-        position: absolute;
-        left: 0px;
-        bottom: 0px;
-    }
-    .event-lista > li > .social {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        display: block;
-        width: 50px;
-    }
-    .event-lista > li > .social > ul {
-        border-left: 1px solid rgb(230, 230, 230);
-    }
-    .event-lista > li > .social > ul > li {			
-        display: block;
-        padding: 0px;
-    }
-    .event-lista > li > .social > ul > li > a {
-        display: block;
-        width: 50px;
-        padding: 10px 0px 9px;
-    } 
-}
-/*FIN ESTILOS DISIPLINAS Y DEPORTE EXTREMO*/
  /*--------cajas de disciplinas----------*/
  @media(min-width: 768px){
     .contenedor-disciplinas{
-        padding-top: 10%;
         display: flex;/*activa el flex*/
         align-items: stretch;/*todas cajas van a tener el mismo tamaño*/
-        justify-content: space-around; 
+       justify-content: space-around; 
     }
     .content-caja{
         flex-basis: 20%;
@@ -408,10 +361,9 @@ width: 39px;
   border-color: rgb(156, 151, 151);
 }
 .i_disciplina{
-    flex-wrap: wrap;
+ 
     border-radius: 8px;
 }
-aside .menu_lateral{
-    float: right;
-   
-}
+/*FIN ESTILOS DISIPLINAS Y DEPORTE EXTREMO*/ 
+/*esto si va */
+ 

@@ -1,9 +1,8 @@
 /*ESTILOS DE FILTROS E IMAGENES DE DEPORTES*/
 
 /*FILTROS -------------------------------*/
-.filtro_deporte {
-    width: 95%;
-    margin: auto;
+ 
+.filtro_deporte {   
     display: flex;
 }
 
@@ -11,18 +10,17 @@
     display: flex;
     flex-direction: column;
     width: 15%;
-}
-
-.filtros .categoria {
+}  
+ 
+.navbar .filtros .menu_filtro .categoria {
     display: block;
     width: 90%;
     padding: 5px 0;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px; 
+     text-decoration: none;
+   
     background: #00AF91;
-
-
-    text-decoration: none;
     text-align: center;
     color: #000000;
 }
@@ -30,7 +28,6 @@
 .filtros .filtro_activo {
     background: #6666ff;
 }
-
 /*DEPORTES -----------------------------*/
 .todos_deportes {
     width: 85%;
@@ -64,7 +61,6 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background: #F58634;
-
     color: #000000;
     text-align: center;
     text-decoration: none;
