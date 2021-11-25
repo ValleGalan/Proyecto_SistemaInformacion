@@ -16,28 +16,39 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from SI2021 import vista
-
-from SI2021.vista import usuario
-
-from SI2021.vista import plantilla_base
-from SI2021.vista import ListaModificar
-from SI2021.vista import BaseLink
+from SI2021.vista import plantilla_base,BaseLink
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')), #login
+    
     path('plantilla_base/', plantilla_base),
     path('BaseLink/', BaseLink),
-     path('index/', vista.index, name="index"),   
+    path('baseAdmin/', vista.baseAdmin,name="baseAdmin"),
+    
+    path('index/', vista.index, name="index"),   
     path('inicio/', vista.inicio, name="inicio"),
     path('login/', vista.login, name="login"),
+     
     path('nosotros/', vista.nosotros, name="nosotros"),
     path('deportesExtremos/', vista.deportesExtremos, name="deportesExtremos"),
     path('disciplinasAlternativas/', vista.disciplinasAlternativas, name="disciplinasAlternativas"),
-    path('yoga/', vista.yoga, name="yoga"),
+   
+    path('contactar/', vista.contactar, name="contactar"),
+    path('ubicacion/', vista.ubicacion, name="ubicacion"),
     path('perfil/', vista.perfil, name="perfil"),
+    path('registro/', vista.registro, name="registro"),
     
-    path('ListaModificar/', ListaModificar), 
-    path('usuario/', usuario),
+    path('sumarActividad/', vista.agregarLUG, name="sumarActividad"),
+    #--------------Funciones 
+  #  path('ListaModificar/', vista.ListaModificar,name="ListaModificar"), 
+    path('ListaModificar/', vista.listaProfesional,name="ListaModificar"),  
+    path('yoga/', vista.listaLugar, name="yoga"),
+    path('mensaje/', vista.mensaje, name="mensaje"),
+    
+   # path('ContadorUsuario/', vista.ListaModificar, name="ContadorUsuario"),
+    
+    
 
 ]
 

@@ -3,6 +3,7 @@
 
  {% block content%}  <!--contenido del hijo variable-->
  <h2 class="titulo">YOGA</h2>
+ <!--
  <section class="contenedor-actividades">
          <div class="contenedor-de-fotos">
                  
@@ -13,9 +14,7 @@
                          <img src="\static\imagenes\yoga1.PNG" onclick="myFuction(this)" alt="">
                          <img src="\static\imagenes\yoga2.PNG" onclick="myFuction(this)" alt="">
                          <img src="\static\imagenes\yoga3.jpg" onclick="myFuction(this)" alt="">
-                     </div>
-             
-             <!-- Scrip para poder cambiar las imagenes --> 
+                     </div> 
              <script type="text/javascript">
              function myFuction(smallImg) {
                  var fullimg=document.getElementById("imageBox");
@@ -38,31 +37,76 @@
          <h3><samp>3</samp>Edad recomendada</h3>
          <p>Se puede realizar esta actividad desde los 3 añoes de edad</p>
      </div>
-
  </section>
+-->
+<!--Carrucel de imagenes con boton-->
+<div class="carrusel">
+  <ul class="carrusel-fotos">
+    <li id="foto1"><img src="\static\imagenes\yoga1.png" alt=""></li>
+    <li id="foto2"><img src="\static\imagenes\yoga2.png" alt=""></li>
+    <li id="foto3"><img src="\static\imagenes\yoga3.jpg" alt=""></li>
+    <li id="foto4"><img src="\static\imagenes\yoga4.jpg" alt=""></li>
+    <li id="foto5"><img src="\static\imagenes\yoga1.png" alt=""></li>
+    <li id="foto6"><img src="\static\imagenes\yoga2.png" alt=""></li>
+  </ul>
+  <ul class="carrusel-menu">
+    <li><a href="#foto1"><img src="\static\imagenes\yoga1.png" alt=""></a></li>
+    <li><a href="#foto2"><img src="\static\imagenes\yoga2.png" alt=""></a></li>
+    <li><a href="#foto3"><img src="\static\imagenes\yoga3.jpg" alt=""></a></li>
+    <li><a href="#foto4"><img src="\static\imagenes\yoga4.jpg" alt=""></a></li>
+    <li><a href="#foto5"><img src="\static\imagenes\yoga1.png" alt=""></a></li>
+    <li><a href="#foto6"><img src="\static\imagenes\yoga2.png" alt=""></a></li>
+  </ul>
+</div>
+
+ <!--Seccion para la lista de lugares donde se da eso-->
  <section>
-     <h2 class="titulo">Lugares donde se puede realizar Yoga</h2>
-     <table class="table table-dark">
-         <thead>
-           <tr>
-             <th scope="col">#</th>
-             <th scope="col">Localidad</th>
-             <th scope="col">Direccion</th>
-             <th scope="col">Telefono</th>
-           </tr>
-         </thead>
-         <tbody>
+  <h2 class="titulo">Lugares donde se puede realizar Yoga</h2>
+  <table class="table table-dark">
+    <thead>
+    <tr>
+    <th scope="col">nombre</th>
+    <th scope="col">Localidad</th>
+    <th scope="col">Direccion</th>
+    <th scope="col">Telefono</th>
+    </tr>
+  </thead>
+      
+{% if lista_LUGAR %}
+    {% for Lugar in lista_LUGAR %}
+    <tbody>
+      <th scope="row"> {{Lugar.nombre}}
+      <td> {{Lugar.localidad}} </td>
+      <td> {{Lugar.direccion}} </td>
+      <td> {{Lugar.telefono}}</td>   
+    </th>
+  </tbody>
+    {% endfor %}
+{% else %}
+    <p>No hay lugares cargados...</p>
+{% endif %}
+           <!--
            <tr>
              <th scope="row">1</th>
              <td>San Salvador</td>
-             <td>Los soles N°165</td>
-             <td>3884669751</td>
+             <td>
+               <a href="https://goo.gl/maps/zWzSTQsFViLNKJMc6" target="_blank">Centro de jujuy</a>
+             </td>
+             <td>3884669751
+              <a href="https://api.whatsapp.com/send?phone=384469541&text=Hola,%20necesito%20mas%20informacion%20acerca%20de%20esta%20actividad%20publicada%20en%20ALE." class="float" target="_blank">
+                <i class="fa fa-whatsapp my-float"></i>
+                </a>
+             </td>
            </tr>
            <tr>
              <th scope="row">2</th>
              <td>Palpala</td>
              <td>Dondequieras S/N</td>
-             <td>384469541</td>
+             <td>384469541
+              <a href="https://api.whatsapp.com/send?phone=384469541&text=Hola,%20necesito%20mas%20informacion%20acerca%20de%20esta%20actividad%20publicada%20en%20ALE." class="float" target="_blank">
+                <i class="fa fa-whatsapp my-float"></i>
+                </a>
+             </td>
            </tr>
            <tr>
              <th scope="row">3</th>
@@ -70,7 +114,8 @@
              <td>-</td>
              <td>-</td>
            </tr>
-         </tbody>
+           -->
+        
        </table>
  </section>
 {% endblock%}

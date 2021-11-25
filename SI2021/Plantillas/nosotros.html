@@ -5,12 +5,27 @@
  <main class="main"> 
 
 <video controls autoplay loop class="contenedor_video"> <!--se reproduce a penas entras-->
-    <source src="\static\imagenes\videoAle.mp4" type="video/mp4" id="video_nosotros">
-    <source src="\static\imagenes\videoAle.ogv" type="video/ogg" id="video_nosotros">
+    <source src="\static\imagenes\videoAle.mp4" type="video/mp4" id="video_nosotros" >
+    <source src="\static\imagenes\videoAle.ogv" type="video/ogg" id="video_nosotros" >
 </video>
+<!---Carrucel automatico de imagenes -->
+<div class="carrusel">
+    <div class="carrusel-items">
+      <div class="carrusel-item">
+        <img src="\static\imagenes\logo.png" alt="no hay..." />
+      </div>
+      <div class="carrusel-item">
+        <img src="\static\imagenes\ale.png" alt="no hay..." />
+      </div>
+      <div class="carrusel-item">
+        <img src="\static\imagenes\logo.png" alt="no hay..." />
+      </div>
+      
+    </div>
+  </div>
 <!--INFORMACION: OBJETIVO,ETC-->
 <div class="container">
-    <h1 class="text-center ">Nosotros </h1>
+   
   <div class="row mt-5">
       <div class="text-center">
          <br><h2>QUIENES SOMOS</h2> 
@@ -21,14 +36,16 @@
                 De a poco, con el paso del tiempo, vamos a ir sumando nuevas funciones y servicios y esperamos poder 
                 traer novedades para uds en todo el año.
                 Los invitamos a que recorran nuestra pagina y se sumen a esta movida..</p>
-            <hr class="separador pb-lg-1"> <!--separador gris-->
+                <!--
+             
             <p class="Nosotros-texto">Brindar servicios online sobre lugares para realizar actividades no convencionales
                 en establecimientos o al aire libre cerca de la residencia del usuario, informar sobre la 
                 disponibilidad de horarios, precios, tipo de actividad física, de eventos gratuitos.</p>
-           <hr class="separador pb-lg-1"> <!--separador gris-->   
-           <div class="imagen_nosotros">
+                <div class="imagen_nosotros">
             <img class="img-thumbnail img-fluid" src="\static\imagenes\logo.png" alt="">
-        </div>                             
+        </div> 
+           <hr class="separador pb-lg-1"> separador gris-->   
+                                    
     </div> 
              
  </div>   
@@ -78,85 +95,36 @@
     </section>
     <!---->
     
-    <!--IMAGENES-->
-    
-    <div class="cuerpo">   
-        <div class="Seccion-nosotros">
-            <section class="marcas">
-                <div class="tarjeta">
-                    <div class="thumbnail">
-                        <img src="\static\imagenes\logo.png" alt="ale"  >
-                    </div>
-                    <div class="tarjeta-content">
-                        <h2>ALE</h2>
-                    </div>    
-                </div>
-                <div class="tarjeta">
-                    <div class="thumbnail">
-                        <img src="\static\imagenes\logo.png" alt="ale"  >
-                    </div>
-                    <div class="tarjeta-content">
-                        <h2>ALE</h2>
-                    </div>    
-                </div>
-                <div class="tarjeta">
-                    <div class="thumbnail">
-                        <img src="\static\imagenes\logo.png" alt="ale"  >
-                    </div>
-                    <div class="tarjeta-content">
-                        <h2>ALE</h2>
-                    </div>    
-                </div>
-            </section>
-        </div>   
-        </div>
     <!--Testimonios-->
-    
+    <h1 class="text-center mt-5">Testimonios</h1>
     <section id="testimonios">
-    <div class="container mb-5">
-        <h1 class="text-center mt-5">Testimonios</h1>
-        <div class="row mt-5">
-            <div class="col-sm12 col-md-6 text-center">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="mt-5">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta est laudantium quidem adipisci reiciendis sed minima expedita sunt?
-                        </p>
-                        <cite><strong>Jon </strong></cite>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col-sm12 col-md-6 text-center">
-                  <div class="card">
-                      <div class="card-body">
-                          <p class="mt-5">
-                              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta est laudantium quidem adipisci reiciendis sed minima expedita sunt?
-                          </p>
-                          <cite><strong>Juana</strong></cite>
-                      </div>
-                  </div>
-              </div>
-        </div>
-    </div>
+          <div class="carta_testimonio">
+              <p class="texto_testimonio">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta est laudantium quidem adipisci reiciendis sed minima expedita sunt?
+              </p>
+              <cite><strong>Jon </strong></cite>
+          </div>    
+          <div class="carta_testimonio">
+              <p class="texto_testimonio">
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta est laudantium quidem adipisci reiciendis sed minima expedita sunt?
+              </p>
+             <cite><strong>Juana</strong></cite>
+         </div>
     </section>
     
-    <!---->
-            <div class="container-fluid">
-                    <div class="  text-center">
-                        <h1 class="Seccion-encabezado text-center">GRACIAS!
-                            <b>Por elegir nuestra página</b>
-                        </h1>
-                        <p class="Contacto-textoBajada">
-                            Disfruta un poco más de la vida, 
-                            y que mejor que hacerlo mediante la realización de algunas de nuestras actividades favoritas.
-                        </p>
-                     
-                </div>
-            </div>
+    <!--TEXTO de agradecimiento-->
+    <div class="container-fluid">
+      <div class="  text-center">
+      <h1 class="Seccion-encabezado text-center">GRACIAS!
+      <b>Por elegir nuestra página</b>
+      </h1>
+      <p class="Contacto-textoBajada">
+        Disfruta un poco más de la vida, 
+        y que mejor que hacerlo mediante la realización de algunas de nuestras actividades favoritas.
+      </p>
+      </div>
+    </div>
+</main> 
 
-    <!--FIN TEXTO-->
-
-        </main> 
-
+     
 {% endblock%}

@@ -1,363 +1,43 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends "plantilla_base.html" %} 
+{% block content%}  
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<h1 id="Lista_usuarios">LISTA profesional</h1>
+{% if lista_PROF %}
+    <ul class="nro_usuarios">
+    {% for Profesional in lista_PROF %}
+        <li>{{Profesional.nombre}}</li>
+        <li>{{Profesional.apellido}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay profesional cargados...</p>
+{% endif %}
 
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+ 
+ <!--FUNCION CONTADOR VISTA
+{% if lista_Usuarios %}
+    <ul class="nro_usuarios">
+    {% for Usuario in lista_Usuarios %}
+        <li>{{Usuario.nombreCompleto}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay usuarios</p>
+{% endif %}
+-->
+<!--
+    
+ <h1>Hola {{mail}} bienvenido </h1>
 
-    <!-- Place your kit's code here -->
-    <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
-
-    <link rel="stylesheet" href="css/estilos.css">
-
-    <title>App Commerce</title>
-  </head>
-  <body>
-
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <img src="img/logo_panel.png" alt="" class="img-flud">
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item mr-auto">
-                    <a href="panel.html" class="nav-link">Inicio</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Tienda
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a href="categorias.html" class="dropdown-item">Categorías</a>
-                        <a href="productos.html" class="dropdown-item">Productos</a>
-                        <a href="inventario.html" class="dropdown-item">Inventario</a>
-                       <div class="dropdown-divider"></div>
-                       <a href="pedidos.html" class="dropdown-item">Pedidos</a>
-                       <div class="dropdown-divider"></div>
-                       <a href="cupones.html" class="dropdown-item">Cupones</a>
-                    </div>
-                </li>
-
-                <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Administración
-                        </a>
-
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a href="#" class="dropdown-item">Usuarios</a>
-                            <a href="#" class="dropdown-item">Configuración</a>
-                            <a href="#" class="dropdown-item">Roles</a>
-                           <div class="dropdown-divider"></div>
-                           <a href="#" class="dropdown-item">Sistema</a>
-                </li>
-            </ul>
-
-            <form action="" class="form-inline my-2 my-lg-0 ml-auto">
-                <input type="search" class="form-control mr-sm-2" placeholder="Buscar" aria-label="Search">
-
-                <button class="btn btn-primary my-2 my-sm-0"><i class="fas fa-search"></i> </button>
-            </form>
-
-
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown mr-3">
-                        <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user"></i> Bienvenido José</a>
-
-                        <div class="dropdown-menu">
-                            <a href="perfil.html" class="dropdown-item"><i class="fas fa-user-circle"></i> Perfil</a>
-
-                            <a href="#" class="dropdown-item"><i class="fas fa-cog"></i> Configuraciones</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">
-                            <i class="fas fa-user-times"></i> Salir
-                        </a>
-                    </li>
-                </ul>
-
-        </div>
-
-    </nav>
-
-    <!--Layout principal-->
-    <div class="container-fluid mt-5">
-        <div class="row">
-            <!--Layout de 3 columnas-->
-            <div class="col-sm-12 col-md-3">
-                <div class="card">
-                    <div class="card-header bg-dark text-white">
-                        <h4><i class="fas fa-align-justify"></i> Menú Principal</h4>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="categorias.html">Categorías</a>
-                                <span class="badge badge-primary badge-pill">10</span>
-                            </li>
-                            <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="productos.html">Productos</a>
-                                <span class="badge badge-primary badge-pill">200</span>
-                            </li>
-                            <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center active">
-                                <a class="text-white" href="inventario.html">Inventario</a>
-                                <span class="badge badge-primary badge-pill">500</span>
-                            </li>
-                            <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="pedidos.html">Pedidos</a>
-                                <span class="badge badge-primary badge-pill">14</span>
-                            </li>
-                            <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="cupones.html">Cupones</a>
-                                <span class="badge badge-primary badge-pill">20</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card mt-5">
-                        <div class="card-header bg-dark text-white">
-                            <h4><i class="fas fa-align-justify"></i> Administración</h4>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group">
-                                <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#">Usuarios</a>
-                                </li>
-                                <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#">Configuraciones</a>
-                                </li>
-                                <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#">Roles</a>
-                                </li>
-                                <li class="list-group-item list-group-item-secondary d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="">Sistema</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-            </div>
-
-            <!--Layout de 9 columnas-->
-            <div class="col-sm-12 col-md-9">
-                <div class="row">
-                    <div class="card-body">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="panel.html">Inicio</a>
-                                </li>
-                                <li class="breadcrumb-item" aria-current="page">Inventario</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-
-
-
-               <!--Últimos productos-->
-               <div class="card mt-5">
-                   <div class="card-header bg-dark text-white">
-                       <h4><i class="fas fa-table"></i> Inventario Productos</h4>
-                   </div>
-                   <div class="card-body">
-                       <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Producto</th>
-                                    <th>Talla</th>
-                                    <th>Precio</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                           <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Camisa 1</td>
-                                    <td>X</td>
-                                    <td>$ 40.000</td>
-                                    <td style="width:150px">
-                                        <div class="btn-group" role="group">
-                                            <a href="" class="btn btn-primary text-white">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-
-                                            <a href="" class="btn btn-success text-white">
-                                                <i class="fas fa-list-alt"></i>
-                                            </a>
-
-                                            <a href="" class="btn btn-danger text-white">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                        <td>1</td>
-                                        <td>Camisa 1</td>
-                                        <td>X</td>
-                                        <td>$ 40.000</td>
-                                        <td style="width:150px">
-                                            <div class="btn-group" role="group">
-                                                <a href="" class="btn btn-primary text-white">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-
-                                                <a href="" class="btn btn-success text-white">
-                                                    <i class="fas fa-list-alt"></i>
-                                                </a>
-
-                                                <a href="" class="btn btn-danger text-white">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                <tr>
-                                    <td>1</td>
-                                    <td>Camisa 1</td>
-                                    <td>X</td>
-                                    <td>$ 40.000</td>
-                                    <td style="width:150px">
-                                        <div class="btn-group" role="group">
-                                            <a href="" class="btn btn-primary text-white">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-
-                                            <a href="" class="btn btn-success text-white">
-                                                <i class="fas fa-list-alt"></i>
-                                            </a>
-
-                                            <a href="" class="btn btn-danger text-white">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td>1</td>
-                                    <td>Camisa 1</td>
-                                    <td>X</td>
-                                    <td>$ 40.000</td>
-                                    <td style="width:150px">
-                                        <div class="btn-group" role="group">
-                                            <a href="" class="btn btn-primary text-white">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-
-                                            <a href="" class="btn btn-success text-white">
-                                                <i class="fas fa-list-alt"></i>
-                                            </a>
-
-                                            <a href="" class="btn btn-danger text-white">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Camisa 1</td>
-                                        <td>X</td>
-                                        <td>$ 40.000</td>
-                                        <td style="width:150px">
-                                            <div class="btn-group" role="group">
-                                                <a href="" class="btn btn-primary text-white">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-
-                                                <a href="" class="btn btn-success text-white">
-                                                    <i class="fas fa-list-alt"></i>
-                                                </a>
-
-                                                <a href="" class="btn btn-danger text-white">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                           </tbody>
-                       </table>
-                   </div>
-               </div>
-
-               <!--Paginación-->
-               <div class="mt-3">
-                   <nav aria-label="Page navigation">
-                       <ul class="pagination">
-                           <li class="page-item">
-                               <a href="#" class="page-link" aria-label="Previous">
-                                   <span aria-hidden="true">&laquo;</span>
-                               </a>
-                           </li>
-                           <li class="page-item active">
-                               <a href="#" class="page-link">1</a>
-                           </li>
-                           <li class="page-item">
-                                <a href="#" class="page-link">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                       </ul>
-                   </nav>
-               </div>
-
-
-            </div>
-        </div>
-    </div>
-
-
-
-    <!--Footer-->
-    <footer id="main-footer" class="bg-dark text-white mt-5 p-5">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <p class="lead text-center">
-                        2019 - Todos los derechos &copy;
-                        <span>App Commerce</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!--Inclusión ckeditor-->
-    <script src="//cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace("editor1");
-    </script>
-  </body>
-</html>
+  <p>The library has the following record counts:</p>
+  <ul>
+    <li><strong>Nombre:</strong> {{ nombre }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+  </ul>
+  
+  <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+  
+-->
+{% endblock%}

@@ -1,4 +1,37 @@
-//-----------Para iluminar la imagen de disciplinas y deportes
-let subtitulo2=document.querySelector('#sub2')
-subtitulo2.style.color='red'
-subtitulo2.textContent='AHORA CAMBIO'
+//-----------Para Carrucel automatico de Nosotros
+const carrusel = document.querySelector(".carrusel-items");
+
+let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
+let intervalo = null;
+let step = 1;
+const start = () => {
+  intervalo = setInterval(function () {
+    carrusel.scrollLeft = carrusel.scrollLeft + step;
+    if (carrusel.scrollLeft === maxScrollLeft) {
+      step = step * -1;
+    } else if (carrusel.scrollLeft === 0) {
+      step = step * -1;
+    }
+  }, 10);
+};
+
+const stop = () => {
+  clearInterval(intervalo);
+};
+
+carrusel.addEventListener("mouseover", () => {
+  stop();
+});
+
+carrusel.addEventListener("mouseout", () => {
+  start();
+});
+
+start();
+//---------Boton de noche o dia
+const btnSwitch = document.querySelector('#switch');
+
+btnSwitch.addEventListener('click', () => {
+	document.body.classList.toggle('dark');
+	btnSwitch.classList.toggle('active');
+});

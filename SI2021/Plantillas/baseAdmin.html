@@ -1,0 +1,57 @@
+{% load static %} <!--carga mis directorios de static,css,javascript,img,etc-->
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="images/jpg"href="{% static '/imagenes/logo.png'%}">
+		<link rel="stylesheet" href="{% static '/css/styleTodo.css'%}"   type="text/css">
+		 
+	<title>{% block title %} ALE{% endblock %}</title>
+</head>
+<body class="grid-container">
+<!------menu-------->
+<header class="header">
+	<a href="{% url 'baseAdmin' %}" class="logo">ALE</a>
+	<input type="checkbox" id="menu-bar"> <!--esta oculto-->
+	<label for="menu-bar">menu</label>    
+    <nav class="Clasenavbar">
+		<ul>
+			<li><a href="{% url 'deportesExtremos' %}">Añadir</a>
+                <ul>
+					<li><a href="{% url 'sumarActividad' %}">Lugar</a></li>   
+				 
+				</ul>
+			</li>
+			<li><a href="#">Cuenta</a>
+			</li>
+			<li><a href="{% url 'nosotros' %}">Salir</a></li>       
+		</ul>
+	</nav>
+</header>
+<!--------fin menu------>
+<!--	
+	 {% block sidebar %}insert default navigation text for every page {% endblock %}
+
+<nav class="navbar"> 
+ 
+</nav>  
+-->
+<!--
+<aside class="sidebar">SIDEBAR</aside>  -->
+
+<main class="main"> 
+{% block content%}<!--seccion variable para las plantillas hijas --> {% endblock%}
+</main>
+ 
+<footer class="footer">
+	  <div class="footer-content">
+		<p>Sitio web, Copyright &copy; 2021
+			<a href="https://twitter.com/render2web" class="text-white"><i class="fab fa-twitter"></i></a>
+			<a href="https://www.facebook.com/render2web" class="text-white"><i class="fab fa-facebook"></i></a>
+			<a href="https://www.instagram.com/render2web/" class="text-white"><i class="fab fa-instagram"></i></a>
+		</p>
+	  </div> 
+</footer>
+	<script src="{% static '/js/main.js'%}"></script>
+</body>
+</html>

@@ -29,24 +29,24 @@ ALLOWED_HOSTS = []
 
 #AQUI DEBEN IR CARGADOS: CSS ,JAVASRIPT, IMAGENES,ETC
 STATICFILES_DIRS=['C:/Users/Florencia Galan/Desktop/Proyecto_SistemaInformacion/SI2021/SI2021/Plantillas/static']
-# Application definition
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django.contrib.sessions',
+    'django.contrib.sessions', #secciones
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'SI2021.Modulos.DeporteExtremo.migrations',#crea la aplicacion y coneccion BD a mis modelos
+    'DepNoConvencional',
+  #  'SI2021.Modulos.DeporteExtremo.migrations',#crea la aplicacion y coneccion BD a mis modelos
    # 'social_django',  # <-- Here social-auth-app-django
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', #secciones
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'SI2021.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'BDDeporteExtremo.db' ,#nombre BD BDDeporteExtremo.db
+        'NAME': 'BDDeporte.db' ,#nombre BD BDDeporteExtremo.db
     }
 }
 
@@ -105,6 +105,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -129,3 +131,22 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#-----------CONFIGURACION PARA EL GMAIL- formulario contactar
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+
+EMAIL_HOST ="smtp.gmail.com"
+EMAIL_USE_TLS =True
+EMAIL_PORT=587
+EMAIL_HOST_USER=' ' #mi correo
+EMAIL_HOST_PASSWORD=' ' #mi contraseña de correo 
+
+#-----------LOGIN
+'''
+AUTH_USER_MODEL = 'users.CustomUser'
+LOGIN_URL='login'
+LOGOUT_REDIRECT_URL='/login/'
+'''
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
