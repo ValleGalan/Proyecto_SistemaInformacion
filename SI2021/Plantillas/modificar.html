@@ -1,0 +1,31 @@
+{% extends "baseAdmin.html" %} 
+  
+ {% block content%}
+ <h2 class="text-center">Modificar una actividad</h2>
+ <form action="" method="post" id="Formulario_Contacto">
+    {% csrf_token%} 
+    <div class="caja_contacto">
+        <label for="">cod_actividad:</label>  {{form.cod_actividad}}
+    </div>
+    
+    <div class="caja_contacto">
+        <label for=""> clasificacion: </label> {{form.list_actividad}} 
+    </div>
+    <div class="caja_contacto">
+        <label for="">localidad :</label> {{form.list_localidad}} 
+    </div>
+    <div class="caja_contacto">
+        <label for="">direccion_club:</label> {{form.direccion_club}} 
+    </div>
+    <div class="caja_contacto">
+        <label for="">nombre_club:</label> {{form.nombre_club}} 
+    </div>
+    <div class="caja_contacto">
+        <label for="">telefono:</label> {{form.telefono}} 
+    </div>
+ 
+    <div class="text-center">
+    <button  class="boton_contacto"  type="submit">Guardar </button>
+    </div>
+ </form>
+ {% endblock%}

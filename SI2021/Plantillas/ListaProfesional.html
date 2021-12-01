@@ -1,0 +1,36 @@
+{% extends "plantilla_base.html" %} 
+{% block content%}   
+ 
+<table >
+    <h3 class="texto_titulo_actividad">LISTA DE PROFESIONALES</h3>
+    <tr class="color_fila" >
+ 
+        <th  >Nombre</th>
+        <th  >Apellido</th>
+        <th  >telefono</th>
+        <th  >email</th>
+    </tr>
+    {% if entity %}
+    {% for Profesional in entity %}
+    <tr class="color_contenido_tabla">
+   
+      <td> {{Profesional.nombre}} </td>
+      <td> {{Profesional.apellido}} </td>
+      <td> {{Profesional.telefono}} </td>
+      <td> {{Profesional.email}} </td>     
+    </th>
+  </tr>
+    {% endfor %}
+  {% else %}
+    <p>No hay PROFESIONALES cargados...</p>
+  {% endif %} 
+
+  </table>
+   
+{% endblock%}
+
+
+
+
+
+

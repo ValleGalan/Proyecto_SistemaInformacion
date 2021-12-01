@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from django.urls import reverse_lazy #para login
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,12 +34,13 @@ STATICFILES_DIRS=['C:/Users/Florencia Galan/Desktop/Proyecto_SistemaInformacion/
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.auth',   #Para el login 
+    'django.contrib.contenttypes',   #para permisos
     'django.contrib.sessions', #secciones
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'DepNoConvencional',
+
   #  'SI2021.Modulos.DeporteExtremo.migrations',#crea la aplicacion y coneccion BD a mis modelos
    # 'social_django',  # <-- Here social-auth-app-django
 
@@ -142,11 +144,13 @@ EMAIL_HOST_USER=' ' #mi correo
 EMAIL_HOST_PASSWORD=' ' #mi contraseña de correo 
 
 #-----------LOGIN
+#tiene que redireccionar por defecto cuando se inicia sesión y cuando se cierra sesión
 '''
 AUTH_USER_MODEL = 'users.CustomUser'
 LOGIN_URL='login'
 LOGOUT_REDIRECT_URL='/login/'
 '''
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL=reverse_lazy('index')  
+LOGOUT_REDIRECT_URL= reverse_lazy('login/') #/account/
+
+

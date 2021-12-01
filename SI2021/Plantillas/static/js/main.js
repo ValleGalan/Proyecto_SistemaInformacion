@@ -1,5 +1,5 @@
 //-----------Para Carrucel automatico de Nosotros
-const carrusel = document.querySelector(".carrusel-items");
+const carrusel = document.querySelector(".carrusel_automatico");
 
 let maxScrollLeft = carrusel.scrollWidth - carrusel.clientWidth;
 let intervalo = null;
@@ -28,6 +28,7 @@ carrusel.addEventListener("mouseout", () => {
 });
 
 start();
+
 //---------Boton de noche o dia
 const btnSwitch = document.querySelector('#switch');
 

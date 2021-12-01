@@ -4,23 +4,9 @@
 	font-family: Arial,Helvetica,sans-serif;
 
 }
-
 /*----------Para que sea responsive--------------*/
-
-.grid-container > * { /*body*/
-    text-align: center;
-
-    /*
-     padding: 5px;
-    background-color: #9b9c9e; 
-    min-height: 100vh;
-	background-size: cover;
-	background: url(../images/bg.jpg) no-repeat;
-	background-position: center; */ 
-  }
   .header { /* el encabezado del menu*/
   grid-area: header;
-  position: fixed;/*posicion estatica*/
 	top:0; left: 0; right: 0;
 	background: #FFCC29;
 	box-shadow: 0 5px 10px #F58634; /*sombra*/
@@ -28,50 +14,39 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1000,
+  z-index: 900,
   }
-  .navbar {
-    grid-area: navbar;
-    margin-top: 2%;
-    padding-top: 0%;
-  }
-  /*
-  .sidebar {
-    grid-area: sidebar;
-    background-color: #fdcfcf;
-  }*/
   .main {
     grid-area: main;
-   /* background-color: #c41111;*/
   }
    
-  .footer {
+  .footer_abajo {
     grid-area: footer;
-    width: auto;
     color:#fff;
     background-color: #007965;
     text-align: center;
     padding: 40px; 
-    margin-top: 10%;
- 
   }
   .grid-container {
     display: grid;
     gap: 2px; /*separacion*/
     grid-template:
       "header"  100px
-      "navbar"  70px
       "main"    auto
-     /* "sidebar" 100px*/
-      "footer"  100px;
+      "footer"  10px;
+     /* "sidebar" 100px
+     "navbar"  50px
+      "
+     */
   }
   @media (min-width: 900px) {
     .grid-container {
       grid-template:
         "header  header header"  100px
         "main  main   main" auto
-        "footer  footer footer"  100px /
-        200px    auto   200px;
+        "footer" auto
+        /*"footer  footer footer"  100px /
+        200px    auto   200px;*/
     }
   }
    
@@ -171,36 +146,56 @@ header label{
      padding-top: 15px;
  }
  .slide img {
-     height: 500px;
-     width: 500px;
+     height: 450px;
+     width: 400px;
  }
  .carousel-caption{
      color:#111;
  }
- /*-----------cajas de inicio-----------------*/
- .contenedor{  /* Estilos globales */
-     color:  #111;
-     margin:auto;
-     overflow:hidden;
-   }
- #cajas_inicio{
-     margin-top:20px;
-   }
+ /*-----------cajas de NOSOTROS-----------------*/
+ /* Cajas */
+#cajas_inicio{
+    margin-top:20px;
+    display: grid;
+     
+  }
+  
+  #cajas_inicio .caja{
+    float:right;
+    background: linear-gradient(to top left, #ffff00 0%, #ffffff 100%);
+    border-radius: 8%;
    
-   #cajas_inicio .caja{
-     float:left;
-     text-align: center;
-     width:30%;
-     padding:10px;
-   }
-   
-   #cajas_inicio .caja img{
-     width:90px;
-   }
- .texto_bienvenida{/*INICIO TEXTO DE BIENVENIDA*/
-     color: #111;
-     text-align: center;
+    text-align: center;
+    width:30%;
+    padding:10px;
+    margin: 1%;
+  }
+  
+  #cajas_inicio .caja img{
+    width:90px;
+  }
+  
+ 
+ .texto_agradecimiento{
+   text-align: center;
+   display: none;  
  }
+ /*------estilos de nosostros-------*/
+.contenedor_video video {
+    display: flex;
+  }
+  .quienes_somos {
+   padding: 2px;
+   background-color: #0c0e0d;
+   color: #fff;
+   border-radius: 3%;
+   margin : 3%;
+  }
+  .Nosotros_texto{
+      margin-top: 2px;
+      margin-left: 7%;
+      margin-right: 7%;
+  }
 /*-----------INICIO LOGIN--------------*/
 body .Contenedor_login{
   background: linear-gradient(to right, #ccff33 0%, #009900 100%);
@@ -233,12 +228,11 @@ body .Contenedor_login{
 .content-caja{
   display: grid; /*para que se acomoden*/
   border-radius: 8px;
-  border-style:#000; 
-  border-color: linear-gradient(to bottom left, #111111 0%, #ffffff 56%);
-/* background-color:  	 	 #e6ffe6;*/
-
- /* grid-template-columns: repeat(4,1fr); columana 4 y 1 fila*/
- grid-gap: 30px;
+  border-style:groove  ;
+  border-color: #F58634;
+  grid-gap: 30px;
+  background-color: #f0f5f5;
+  margin-top: 3%;
 }
 .i_disciplina{ /*imagen*/
     display: grid;
@@ -250,6 +244,12 @@ body .Contenedor_login{
 }
 .content-caja .i_disciplina img:hover{ /*imagen*/
   transform: scale(6.3);
+}
+.Titulo_actividad{
+  text-align: center;
+  text-transform: uppercase;
+   text-decoration-color: #111;
+  
 }
 /*------bononera social----*/
 .botonera{
@@ -318,8 +318,8 @@ body .Contenedor_login{
   }
 
   .carrusel-fotos img {
-    width: 500px;
-    height: 400px;
+    width: 350px;
+    height: 300px;
   }
   .carrusel-menu {
     display: block;
@@ -362,45 +362,27 @@ p {
 	margin-top:16px;
 }
 
-/*------estilos de nosostros-------*/
-#testimonios{
-  display: grid;
-  grid-template-columns:repeat(2,minmax(200px,1fr)) ;
-  padding-top: 3px
-}
-.carta_testimonio {
-  background-color: #FFCC29;
-  text-align: center;
-  width: 80%;;
-  padding: 5%;
-  display: grid;
-  border-radius: 10px; 
-  margin: 10%;
-}
-.contenedor_video{
-  display: grid;
-  width: 100%;
- 
-}
+
 /* AGREGAR EFECTO AL VIDEO
 #video_nosotros:hover{
   width: 120%;
 }*/
 
- /*----Carrucel automatico de nosotros----*/
- .carrusel {
- 
+ /*----Carrucel automatico de nosotros----*/ 
+ .carrusel_aut {
+  height: 100vh;
   display: flex;
   align-items: center;
 }
-.carrusel-items {
+
+.carrusel_automatico {
   display: flex;
   overflow-x: hidden;
   overflow-y: hidden;
-  padding: 5px 0px;
+  padding: 30px 0px;
 }
 
-.carrusel-item {
+.carrusel_foto {
   min-width: 300px;
   max-width: 300px;
   height: 200px;
@@ -408,29 +390,25 @@ p {
   cursor: pointer;
 }
 
-.carrusel-item img {
+.carrusel_foto img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.carrusel-item:hover {
+.carrusel_foto:hover {
   transform: scale(1.2);
 }
+
 /*---------Contacto------------*/
-form {
-  background-color: #F58634;
-  /*
-  border-radius: 3%;
-  border-color:  #F58634;*/
-  margin-left: 10%;
-  margin-right: 10%;
-  
-}
+
 #Formulario_Contacto{
   display:grid;
   border-radius: 5%;
-  padding: 0%;
+  padding: 1%;
+  margin-left: 27%;
+  margin-right: 27%;
+  background-color: #999;
 }
 .caja_contacto{ /*label es*/
   display: grid;
@@ -439,9 +417,10 @@ form {
   margin-right: 20%;
   align-content: center;
   margin-top: 2%;
+  text-align: center;
 }
 .f-control{
-  background-color: #FFCC29;
+  background-color: #fff;
 }
 .boton_contacto{
   border-radius: 5%;
@@ -449,6 +428,7 @@ form {
   padding: 2%;
   margin: 2%;
 }
+ 
 /*-----------Lista usuarios -ListaModificar*/
 #Lista_usuarios{
   color: #007965;
@@ -456,3 +436,125 @@ form {
 .nro_usuarios{
   background-color: #ccff33;
 }
+
+/*--------LOGIN------------*/
+
+.contenedor_login{
+  width: 100%;
+  padding: 15px;
+}
+.formulario_login{
+  background: #fff;
+  margin-top: 150px;
+  padding: 3px;
+}
+h1{
+  text-align: center;
+  color: #1a2537;
+  font-size: 40px;
+}
+input[type="text"],
+input[type="password"]{
+  font-size: 20px;
+  width: 82%;
+  padding: 10px;
+  border: none;
+}
+.input-contenedor_login{
+  margin-bottom: 15px;
+  border: 1px solid #aaa;
+}
+.icon{
+  min-width: 50px;
+  text-align: center;
+  color: #999;
+}
+.button_login{
+  border: none;
+  width: 100%;
+  color: #111;
+  font-size: 20px;
+  background:  #ffff00; /*  1a2537 */
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button_login:hover{
+  background: #fff; 
+}
+p{
+  text-align: center;
+}
+.link{
+  text-decoration: none;
+    color: #1a2537;
+  font-weight: 600;
+}
+.link:hover{
+   color: cadetblue;
+}
+@media(min-width:768px)
+{
+  .formulario_login{
+      margin: auto;
+      width: 500px;
+      margin-top: 150px;
+      border-radius: 2%;
+  }
+}
+
+.body_formulario_login{
+  background-color:  #ccffcc;
+}
+.Lista_profesional_cuadro{
+  padding: 2%;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 3%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+ 
+.color_fila{
+  background-color: #007965;
+  color: #fff;
+}
+.color_contenido_tabla{
+  background-color: rgb(235, 225, 225);
+}
+.titulo{
+  text-align: center;
+  text-decoration-color: #007965;
+}
+.yoga_responsive{
+ 
+  padding: 2%;
+}
+.contenido_textos{
+  text-align: center;
+  margin: 3%;
+  border-radius: 3%;
+  background-color: #111;
+  color: #fff;
+}
+.texto_titulo_actividad{
+  color: #1cc4a8;
+  text-align: center;
+}
+.contenedor_video{
+width: 100%;
+height: 300px;
+}
+ 

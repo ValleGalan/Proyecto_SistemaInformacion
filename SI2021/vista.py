@@ -1,26 +1,30 @@
 from django import template
-from django.shortcuts import redirect, render
+from django.core import paginator
+from django.shortcuts import get_object_or_404, redirect, render
 from django.http import HttpResponse 
 from datetime import datetime #extraer la fecha
 #from SI2021.Modulos.DeporteExtremo.models import Usuario
-from DepNoConvencional.models import Profesional, Lugar ,Usuario
+from DepNoConvencional.models import Actividad, Profesional ,Usuario
 from django.views import generic #ListaUsuario
 #-----------Envio de Email- en contactar
 from django.template.loader import get_template
 from django.core.mail import EmailMultiAlternatives
-
-from django.conf import Settings, settings
+from django.conf import  settings
 from django.core.mail import send_mail
+#--------------Paginador
+from django.core.paginator import Page, Paginator
+from django.http import Http404
 #------------LOGIN
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate,login,logout
+#from django.contrib.auth.forms import AuthenticationForm
+#from django.contrib.auth import authenticate,login,logout
 #from .forms import Login
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.decorators import login_required
+#from django.contrib.auth.mixins import LoginRequiredMixin
+#from django.contrib.auth.decorators import login_required
 #----------Formulario
-from  DepNoConvencional.forms import LugarForm
+from  DepNoConvencional.forms import ActividadForm ,ProfesionalForm
 
 # Plantillas Padres   SI2021.SI2021.DepNoConvencional.
+ 
 def plantilla_base(request):
     return render(request,'plantilla_base.html')
 def BaseLink(request):
@@ -46,23 +50,24 @@ def disciplinasAlternativas(request):
  
 
 #Plantillas para hacerlas funcionales 
-def yoga(request):
-    return render(request,'yoga.html')
+
 def ubicacion(request):
     return render(request,'ubicacion.html')
 
 def registro(request):
     return render(request,'registro.html')
 
-def ListaModificar(request):
-    return render(request,'ListaModificar.html')
- 
+
+
+
 #Plantillas para login
-''' FECHA DEL SISTEMA
+''' FECHA DEL SISTEMA 
 def login(request):
     #fecha del sistema
     data_today=datetime.now().date() # 
     return render(request,'login.html',{'data_today':data_today}) 
+'''
+
 '''
 @login_required
 def login(request):
@@ -70,7 +75,7 @@ def login(request):
 def salir(request):
     logout(request)
     return redirect('/')
-'''
+
 def login(request):
     #fecha del sistema
     form=AuthenticationForm()
@@ -89,47 +94,123 @@ def login(request):
 
 def perfil(request):
     return render(request,'perfil.html')
-def registro(request):
-    return render(request,'registro.html')
+ 
 #------------Peticiones
 def mensaje(request):
     return HttpResponse('!Hola desde Django!')
-#------------Formulario agregar actividad-lugar
-def agregarLUG(request):
-    #form= Lugar()
+#------------Formulario ACTIVIDAD -CRUD
+def agregar_actividad(request):
     if request.method == 'POST':
-        fm=LugarForm(request.POST)
+        fm=ActividadForm(request.POST)
         if fm.is_valid():
             print("valido")
-            #lugar = Lugar()
-            #lugar.id_lugar = form.cleaned_data['id_lugar']
-            #lugar.nombre = form.cleaned_data['nombre']
-            #lugar.localidad = form.cleaned_data['localidad']
-            #lugar.direccion = form.cleaned_data['direccion']
-            #lugar.telefono = form.cleaned_data['telefono']
             fm.save()
-            return redirect('/sumarActividad')
+            return redirect('/agregar')
     else:
-            print("invalido")
-            fm = LugarForm()
-    return render(request,'sumarActividad.html',{'form':fm})
+            print("invalido es el formulario ")
+            fm = ActividadForm()
+    return render(request,'agregar.html',{'form':fm})
 
+def eliminar(request, cod_actividad):
+    act = get_object_or_404(Actividad,cod_actividad=cod_actividad)
+    act.delete()
+    return redirect(to="lista_actividad")
 
+def modificar(request, cod_actividad):
+    act = get_object_or_404(Actividad,cod_actividad=cod_actividad) #buscar(modelo,condicion)
+    data= { 
+           'form'  : ActividadForm(instance=act)
+           }
+    if request.method == 'POST':
+        formulario= ActividadForm(data=request.POST ,instance= act,files= request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(to='lista_actividad')
+        data['form'] = formulario      
+        
+    return render(request,'modificar.html', data)
+def agregar_profesional(request):
+    if request.method == 'POST':
+        fm=ProfesionalForm(request.POST)
+        if fm.is_valid():
+            print("valido")
+            fm.save()
+            return redirect('/agregar_profesional')
+    else:
+            print("invalido es el formulario ")
+            fm = ProfesionalForm()
+    return render(request,'agregar_profesional.html',{'forms':fm})
+ 
+def eliminar_pro(request, dni_profesional):
+    act = get_object_or_404(Profesional,dni_profesional=dni_profesional)
+    act.delete()
+    return redirect(to="lista_profesional")
+
+def modificar_pro(request, dni_profesional):
+    act = get_object_or_404(Profesional,dni_profesional=dni_profesional) #buscar(modelo,condicion)
+    data= { 
+           'forms'  : ProfesionalForm(instance=act)
+           }
+    if request.method == 'POST':
+        formulario= ProfesionalForm(data=request.POST ,instance= act,files= request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(to='lista_profesional')
+        data['forms'] = formulario      
+        
+    return render(request,'modificar_pro.html', data)
+'''
+def modificarAct (request,cod_actividad):
+    Activida= Actividad.objects.filter(cod_actividad=cod_actividad).first()
+    form = ActividadForm(instance= Activida)
+    return render(request, "modificar.html" ,{"form" : form,'Actividad':Activida})
+'''  
 #-----------Consultar datos ,FILTROS DE LUGAR POR ACTIVIDAD
-def ListaModificar(request):
+def ListaUsuario(request):
     list_user = Usuario.objects.filter(rol__exact="user") #presentar nuestros usuarios
     context = {'lista_Usuarios': list_user} #var donde guardo la lista
     return render(request,'ListaModificar.html', context)
-
-def listaProfesional(request):
+ 
+def listaAProfesional(request):
     list_profesional = Profesional.objects.filter()  
     context = {'lista_PROF': list_profesional} #var donde guardo la lista
-    return render(request,'ListaModificar.html', context)
+    return render(request,'ListaProfesional.html', context)
 
-def listaLugar(request):
-    list_lugar = Lugar.objects.filter()  
-    context = {'lista_LUGAR': list_lugar}  
+def listaProfesional(request):  #paginador
+    list_act = Profesional.objects.all()
+    page= request.GET.get('page',1)
+    try:
+        paginator = Paginator(list_act,5) #cantidad que listo
+        list_act = paginator.page(page)
+    except:
+        raise Http404
+    data = {'entity': list_act,
+            'paginator': paginator }  
+    return render(request,'lista_profesional.html', data)
+
+def listAActividad(request):  #comun
+    list_act = Actividad.objects.all()
+    context = {'lista_ACTIVIDAD': list_act}  
+    return render(request,'lista_actividad.html', context)
+
+def listActividad(request):  #paginador
+    list_act = Actividad.objects.all()
+    page= request.GET.get('page',1)
+    try:
+        paginator = Paginator(list_act,5) #cantidad que listo
+        list_act = paginator.page(page)
+    except:
+        raise Http404
+    data = {'entity': list_act,
+            'paginator': paginator }  
+    return render(request,'lista_actividad.html', data)
+
+def listActividadYoga(request):
+    list_act = Actividad.objects.filter(list_actividad__exact="yoga") #presentar nuestros usuarios
+    context = {'lista_ACTIVIDAD': list_act} #var donde guardo la lista
     return render(request,'yoga.html', context)
+
+
 #--------------Funcion 
 def ContadorUsuario(request):
     """ Función vista para la página inicio del sitio """
@@ -145,33 +226,8 @@ def ContadorUsuario(request):
         'ListaModificar.html',
         context={'num_usuario':num_usuario,'num_instances_available':num_instances_available,'num_apellido':num_apellido},
     )
-#------------Conteos de Visita
-'''
-def ListaModificar(request):
-    # Genera contadores de algunos de los objetos principales
-    nombre=Usuario.objects.all().count()
-    num_instances=Usuario.objects.all().count()
-    # Libros disponibles (status = 'a')
-    num_instances_available=Usuario.nombre.objects.filter(nombre__exact='L').count()
-    num_authors=Usuario.objects.count()  # El 'all()' se obvia en este caso.
-    # Numero de visitas a esta view, como está contado en la variable de sesión.
-    num_visits = request.session.get('num_visits', 0)
-    request.session['num_visits'] = num_visits + 1
-
-    context = {
-        'nombre':nombre,
-        'num_instances':num_instances,
-        'num_instances_available':num_instances_available,
-        'num_authors':num_authors,
-        'num_visits':num_visits,
-    } 
-
-    # Carga la plantilla index.html con la información adicional en la variable context.
-    return render(request, 'ListaModificar.html', context=context)
-'''
-#-------------Para la vista
-class ListaUsuario(generic.ListView):
-    model = Usuario
+    
+ 
 #-------------Formulario contacto-enviar gmail
 '''def contactar(request):
     return render(request,'contactar.html')

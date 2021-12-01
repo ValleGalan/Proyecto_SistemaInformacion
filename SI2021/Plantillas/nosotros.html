@@ -5,126 +5,88 @@
  <main class="main"> 
 
 <video controls autoplay loop class="contenedor_video"> <!--se reproduce a penas entras-->
-    <source src="\static\imagenes\videoAle.mp4" type="video/mp4" id="video_nosotros" >
-    <source src="\static\imagenes\videoAle.ogv" type="video/ogg" id="video_nosotros" >
+    <source src="\static\imagenes\videoAle.mp4" type="video/mp4" width="140%"  heigth ="70px" >
+    <source src="\static\imagenes\videoAle.ogv" type="video/ogg" width="140%" heigth ="70px" >
 </video>
-<!---Carrucel automatico de imagenes -->
-<div class="carrusel">
-    <div class="carrusel-items">
-      <div class="carrusel-item">
-        <img src="\static\imagenes\logo.png" alt="no hay..." />
-      </div>
-      <div class="carrusel-item">
-        <img src="\static\imagenes\ale.png" alt="no hay..." />
-      </div>
-      <div class="carrusel-item">
-        <img src="\static\imagenes\logo.png" alt="no hay..." />
-      </div>
-      
-    </div>
-  </div>
+<!---Carrucel automatico de imagenes --> 
+<div class="texto_agradecimiento">
+  
+  <p class="" >
+     GRACIAS!
+      <b>Por elegir nuestra página</b>
+       
+    Disfruta un poco más de la vida, 
+    y que mejor que hacerlo mediante la realización de algunas de nuestras actividades favoritas.
+  </p>
+</div> 
 <!--INFORMACION: OBJETIVO,ETC-->
-<div class="container">
-   
-  <div class="row mt-5">
-      <div class="text-center">
-         <br><h2>QUIENES SOMOS</h2> 
-            <p class="Nosotros-texto">Somos ALE, y nacimos en el 2021 como un sitio web, que apunta a diferenciarse en  
+<div class="quienes_somos">
+ 
+         <br><h2 class="texto_titulo_actividad">QUIENES SOMOS</h2> 
+            <p class="Nosotros_texto">Somos ALE, y nacimos en el 2021 como un sitio web, que apunta a diferenciarse en  
                 crear un vínculo entre las personas y los establecimientos que brindan servicios de actividades, deportes
                  no convencionales, obteniendo como resultado la promocion de dichas actividades y deportes como asi 
                  tambien el bienestar fisico y mental de aquellas personas que realizaran las mismas.
                 De a poco, con el paso del tiempo, vamos a ir sumando nuevas funciones y servicios y esperamos poder 
                 traer novedades para uds en todo el año.
                 Los invitamos a que recorran nuestra pagina y se sumen a esta movida..</p>
-                <!--
-             
-            <p class="Nosotros-texto">Brindar servicios online sobre lugares para realizar actividades no convencionales
-                en establecimientos o al aire libre cerca de la residencia del usuario, informar sobre la 
-                disponibilidad de horarios, precios, tipo de actividad física, de eventos gratuitos.</p>
-                <div class="imagen_nosotros">
-            <img class="img-thumbnail img-fluid" src="\static\imagenes\logo.png" alt="">
-        </div> 
-           <hr class="separador pb-lg-1"> separador gris-->   
-                                    
-    </div> 
-             
- </div>   
+    
 </div>
-<!---->
-<!--Servicios-->
-<section id="servicios">
-    <div class="container">
-        <h1 class="text-center mt-5">Nuestros Servicios</h1>
-    
-      <div class="row mt-5">
-          <div class="col-sm-12 col-md-4 text-center">
-              <h2 class="mt-5"><i class="fas fa-paint-brush"></i><br> MISION</h2>
-              <p class="mt-5"> 
-                Mediante las nuevas tecnologías  ser  el  vínculo de información constante 
-                entre las personas y las actividades frecuentemente no convencionales 
-                (como disciplinas de artes marciales, tenis, padel, yoga, etc)  que promueven el bienestar 
-                tanto  físico como  mental
-              </p>
-              <br>
-               <button class="btn btn-info text-center mb-5"> Ver más <i class="fas fa-arrow-circle-right"></i> </button>
-          </div>
-    
-          <div class="col-sm-12 col-md-4 text-center">
-              <h2 class="mt-5"><i class="fas fa-search-dollar"></i><br> VISION</h2>
-              <p class="mt-5"> 
-                Se espera que el sitio tenga más funcionalidades, para atisfacer la necesidad 
-                no solo de información, poder crear eventos más solicitados en regiones mas demandadas.
-              </p>
-              <br>
-              <button class="btn btn-info text-center mb-5"> Ver más <i class="fas fa-arrow-circle-right"></i> </button>
-          </div>
-    
-          <div class="col-sm-12 col-md-4 text-center">
-              <h2 class="mt-5"><i class="fas fa-bullhorn"></i><br> VALORES</h2>
-              <p class="mt-5">
-                Compromiso con la salud. 
-                Mitigar los prejuicios de realizar actividades no convencionales. 
-                Respeto.
-            </p>
-              <br>
-              <button class="btn btn-info text-center mb-5"> Ver más <i class="fas fa-arrow-circle-right"></i> </button>
-          </div>
-      </div>
+ 
+    <!--INICIO SECTION DE IMAGENES-->
+<section id="cajas_inicio">
+  <figure class="contenedor_caja_inicio">
+    <div class="caja">
+      <img src="\static\imagenes\mision.png">    
+      <p> “ Mediante las nuevas tecnologías  ser  el  vínculo de información constante 
+        entre las personas y las actividades frecuentemente no convencionales 
+        (como disciplinas de artes marciales, tenis, padel, yoga, etc)  que promueven el bienestar 
+        tanto  físico como  mental”
 
+      </p>
     </div>
-    </section>
-    <!---->
-    
-    <!--Testimonios-->
-    <h1 class="text-center mt-5">Testimonios</h1>
-    <section id="testimonios">
-          <div class="carta_testimonio">
-              <p class="texto_testimonio">
+    <div class="caja">
+      <img src="\static\imagenes\vision.png">
+      <p>“Se espera que el sitio tenga más funcionalidades, para atisfacer la necesidad 
+        no solo de información, poder crear eventos más solicitados en regiones mas demandadas. ” 
+
+      </p>
+    </div>
+    <div class="caja">
+      <img src="\static\imagenes\valores.png">
+      <p>“Compromiso con la salud. 
+        Mitigar los prejuicios de realizar actividades no convencionales. 
+        Respeto. ”
+
+      </p>
+    </div>
+
+  </figure>
+</section>
+   <!--
+    Testimonios 
+     <h1 class="text-center mt-5">Testimonios</h1>
+     <section id="testimonios">
+           <div class="carta_testimonio">
+               <p class="texto_testimonio">
+                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta est laudantium quidem adipisci reiciendis sed minima expedita sunt?
+               </p>
+               <cite><strong>Jon </strong></cite>
+           </div>    
+           <div class="carta_testimonio">
+               <p class="texto_testimonio">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta est laudantium quidem adipisci reiciendis sed minima expedita sunt?
-              </p>
-              <cite><strong>Jon </strong></cite>
-          </div>    
-          <div class="carta_testimonio">
-              <p class="texto_testimonio">
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta est laudantium quidem adipisci reiciendis sed minima expedita sunt?
-              </p>
-             <cite><strong>Juana</strong></cite>
-         </div>
-    </section>
+               </p>
+              <cite><strong>Juana</strong></cite>
+          </div>
+     </section>
+   -->
     
     <!--TEXTO de agradecimiento-->
-    <div class="container-fluid">
-      <div class="  text-center">
-      <h1 class="Seccion-encabezado text-center">GRACIAS!
-      <b>Por elegir nuestra página</b>
-      </h1>
-      <p class="Contacto-textoBajada">
-        Disfruta un poco más de la vida, 
-        y que mejor que hacerlo mediante la realización de algunas de nuestras actividades favoritas.
-      </p>
-      </div>
-    </div>
+     
+      
 </main> 
 
+<script src="main.js"></script>
      
 {% endblock%}

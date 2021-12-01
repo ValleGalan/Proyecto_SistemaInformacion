@@ -1,0 +1,50 @@
+{% extends "baseAdmin.html" %} 
+{% block content%}  
+
+<section>
+  <a href=" {% url 'agregar' %}" class="btn btn-primary btn-sm"> agregar actividad </a>
+    <h2 class="titulo">LISTA DE ACTIVIDADES</h2>
+<table  >
+  <thead>
+  <tr class="color_fila">
+ 
+  <th  >clasificacion</th>
+  <th  >Localidad</th>
+  <th  >Direccion</th>
+  <th  >Nombre Club</th>
+  <th  >Telefono</th>
+  <th >Opciones</th>
+  </tr>
+</thead>
+    
+{% if entity %}
+  {% for Actividad in entity %}
+  <tbody  class="color_contenido_tabla">
+    <td> {{Actividad.list_actividad}} </td>
+    <td> {{Actividad.list_localidad}} </td>
+    <td> {{Actividad.direccion_club}} </td>
+    <td> {{Actividad.nombre_club}} </td>
+    <td>  {{Actividad.telefono}}
+      <a href="https://api.whatsapp.com/send?phone={{Actividad.telefono}}&text=Hola,%20necesito%20mas%20informacion%20acerca%20de%20esta%20actividad%20publicada%20en%20ALE." class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+        </a>
+    </td>  
+    <td>
+      <a href=" {% url 'modificar' Actividad.cod_actividad %}" class="btn btn-warning btn-sm"> modificar</a>
+      <a href="{% url 'eliminar' Actividad.cod_actividad %}" class="btn btn-danger btn-sm"> eliminar</a>
+    </td>
+    
+  </th>
+</tbody>
+  {% endfor %}
+{% else %}
+  <p>No hay lugares cargados...</p>
+{% endif %} 
+</section>
+<div>
+  <hr>
+  {% include 'paginator.html'%}
+
+</div>
+
+{% endblock%}

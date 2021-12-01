@@ -1,0 +1,36 @@
+{% extends "baseAdmin.html" %} 
+  
+ {% block content%}
+ <h2 class="text-center">Agregar una actividad</h2>
+ 
+    <form action="" method="post" id="Formulario_Contacto">
+        {% csrf_token%} 
+        <div class="caja_contacto">
+            <label for="">cod_actividad:</label>
+            <input type="text" name="cod_actividad" id="cod_actividad">
+        </div>
+        
+        <div class="caja_contacto">  <label for=""> clasificacion: </label> {{form.list_actividad}}      </div>
+        <div class="caja_contacto"> <label for="">localidad :</label>  {{form.list_localidad}}    </div>
+        <div class="caja_contacto">
+            <label for="">direccion_club:</label>
+            <input type="text" name="direccion_club" id="direccion_club">
+        </div>
+        <div class="caja_contacto">
+            <label for="">nombre_club:</label>
+            <input type="text" name="nombre_club" id="nombre_club">
+        </div>
+        <div class="caja_contacto">
+            <label for="">telefono:</label>
+            <input type="text" name="telefono" id="telefono">
+        </div>
+     
+        <div class="text-center">
+        <button  class="boton_contacto"  type="submit">Guardar </button>
+        </div>
+     </form>
+ 
+
+ 
+
+ {% endblock%}

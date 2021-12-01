@@ -15,12 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from SI2021 import vista
+from SI2021 import vista 
 from SI2021.vista import plantilla_base,BaseLink
+#from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import logout_then_login, LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')), #login
+    #path('registration/login/', LoginView.as_view(), name= 'login'),
+    #path('logout/', LogoutView.as_view(), name= 'logout'),
+    #path('accounts/LoginView/',LoginView,{'template_name':LoginView} , name="LoginView"),
+    path('login/', LoginView.as_view(template_name='login.html')),#accounts/
+    path('logout/', logout_then_login, name="logout"),
     
     path('plantilla_base/', plantilla_base),
     path('BaseLink/', BaseLink),
@@ -28,7 +34,9 @@ urlpatterns = [
     
     path('index/', vista.index, name="index"),   
     path('inicio/', vista.inicio, name="inicio"),
-    path('login/', vista.login, name="login"),
+    
+    
+    
      
     path('nosotros/', vista.nosotros, name="nosotros"),
     path('deportesExtremos/', vista.deportesExtremos, name="deportesExtremos"),
@@ -39,14 +47,23 @@ urlpatterns = [
     path('perfil/', vista.perfil, name="perfil"),
     path('registro/', vista.registro, name="registro"),
     
-    path('sumarActividad/', vista.agregarLUG, name="sumarActividad"),
     #--------------Funciones 
-  #  path('ListaModificar/', vista.ListaModificar,name="ListaModificar"), 
-    path('ListaModificar/', vista.listaProfesional,name="ListaModificar"),  
-    path('yoga/', vista.listaLugar, name="yoga"),
-    path('mensaje/', vista.mensaje, name="mensaje"),
+    path('lista_actividad/', vista.listActividad, name="lista_actividad"),
     
-   # path('ContadorUsuario/', vista.ListaModificar, name="ContadorUsuario"),
+    path('agregar_profesional/', vista.agregar_profesional, name="agregar_profesional"),
+    path('modificar_pro/<dni_profesional>/', vista.modificar_pro, name="modificar_pro"),
+    path('eliminar_pro/<dni_profesional>/', vista.eliminar_pro, name="eliminar_pro"),
+    path('agregar/', vista.agregar_actividad, name="agregar"),
+    path('modificar/<cod_actividad>/', vista.modificar, name="modificar"),
+    path('eliminar/<cod_actividad>/', vista.eliminar, name="eliminar"),
+
+    #path('modificar/<pk>/', vista.post_edit, name="modificar"),
+    path('ListaProfesional/', vista.listaAProfesional, name="ListaProfesional"),
+    
+    path('lista_profesional/', vista.listaProfesional,name="lista_profesional"),  
+    path('yoga/', vista.listActividadYoga, name="yoga"),
+    path('mensaje/', vista.mensaje, name="mensaje"),
+
     
     
 

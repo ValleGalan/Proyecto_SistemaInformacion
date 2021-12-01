@@ -1,0 +1,50 @@
+{% extends "baseAdmin.html" %} 
+{% block content%}  
+
+<section>
+  <a href=" {% url 'agregar_profesional' %}" class="btn btn-primary btn-sm"> agregar Profesional </a>
+    <h2 class="titulo">LISTA DE PROFESIONALES</h2>
+<table  >
+  <thead>
+  <tr class="color_fila">
+  <th  >DNI</th>
+  <th  >Nombre</th>
+  <th  >Apellido</th>
+  <th  >telefono</th>
+  <th  >email</th>
+  <th  >Opciones</th>
+  </tr>
+</thead>
+ 
+{% if entity %}
+  {% for Profesional in entity %}
+  <tbody class="color_contenido_tabla">
+    <th  > {{Profesional.dni_profesional}}
+    <td> {{Profesional.nombre}} </td>
+    <td> {{Profesional.apellido}} </td>
+    <td> {{Profesional.telefono}} </td>
+    <td> {{Profesional.email}} </td>
+      
+    <td>
+      <a href=" {% url 'modificar_pro' Profesional.dni_profesional %}" class="btn btn-warning btn-sm"> modificar</a>
+      <a href="{% url 'eliminar_pro' Profesional.dni_profesional %}" class="btn btn-danger btn-sm"> eliminar</a>
+    </td>
+    
+  </th>
+</tbody>
+  {% endfor %}
+{% else %}
+  <p>No hay lugares cargados...</p>
+{% endif %} 
+</section>
+<div>
+  <hr>
+  {% include 'paginator.html'%}
+
+</div>
+<div>
+  
+  {% include 'paginator.html'%}
+
+</div>
+{% endblock%}

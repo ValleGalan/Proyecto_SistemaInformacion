@@ -1,13 +1,20 @@
 from django.forms import ModelForm
-from .models import Lugar
+from .models import Actividad , Profesional
 
 
 #----formulario Lugar
-class LugarForm(ModelForm):
+class ActividadForm(ModelForm):
+    
     class Meta:
-        model = Lugar
+        model = Actividad
         fields = '__all__'
         # fields = ['last_store', 'make', 'model', 'series', 'series_year', 'price_new', 'engine_size', 'fuel_system', 'tank_capacity', 'power', 'seating_capacity', 'standard_transmission', 'body_type', 'drive', 'wheelbase', 'available']
+
+class ProfesionalForm(ModelForm):
+    
+    class Meta:
+        model = Profesional
+        fields = '__all__'
 '''
 class FormularioUsuario(forms.ModelForm):
     class meta:

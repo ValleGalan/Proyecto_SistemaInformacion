@@ -1,0 +1,39 @@
+{% extends "baseAdmin.html" %} 
+  
+ {% block content%}
+ <h2 class="text-center">Agregar una Profesional</h2>
+ 
+    <form action="" method="post" id="Formulario_Contacto">
+        {% csrf_token%} 
+        <div class="caja_contacto">
+            <label for="">DNI:</label>
+            <input type="text" name="dni_profesional" id="dni_profesional">
+        </div>
+         
+        <div class="caja_contacto">
+            <label for="">nombre :</label>
+            <input type="text" name="nombre" id="nombre">
+        </div>
+        <div class="caja_contacto">
+            <label for="">epellido:</label>
+            <input type="text" name="apellido" id="apellido">
+        </div>
+        <div class="caja_contacto">
+            <label for="">telefono:</label>
+            <input type="text" name="telefono" id="telefono">
+        </div>
+        
+        <div class="caja_contacto">
+            <label for="">email:</label>
+            <input type="email" name="email" id="email">
+        </div>
+        
+        <div class="text-center">
+        <button  class="boton_contacto"  type="submit">Guardar </button>
+        </div>
+     </form>
+ 
+
+ 
+
+ {% endblock%}
